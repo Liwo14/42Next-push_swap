@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/12 12:47:03 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/13 08:33:02 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ssize_t char_check(char **argv, ssize_t index)
         else if  (argv[index][i] == ' ' )
             i++;
         else if ((argv[index][i]  < '0') || (argv[index][i]  > '9'))
-            return (-1);
+            return (debugg(0));
         else 
             i++;
     }
@@ -53,7 +53,7 @@ ssize_t check_input(int argc, char **argv)
     strategy = 0;
     checker = 0;
     if (argc > 3)
-        return (-1);
+        return (debugg(3));
     if (argc == 2)
     {
         strategy = 4;
@@ -67,12 +67,13 @@ ssize_t check_input(int argc, char **argv)
         if ((argv[2][0] == '-') && (argv[2][1] == '-'))
             checker++;
         if (checker != 1)
-            return (-1);
+            return (debugg(2));
         strategy = check_instruct(argv); 
     }
     return (strategy);
     
 }
+/*
 split_correct_input()
 {
     
@@ -81,3 +82,4 @@ check_dup()
 {
     
 }
+*/
