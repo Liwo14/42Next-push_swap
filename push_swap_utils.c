@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:59:28 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/13 08:33:55 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/13 10:27:15 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t debugg(ssize_t nb)
+ssize_t debugg(ssize_t nb)
 {
     if (nb == 0)
         ft_printf("error : arg in list is not a number\n");
     else if (nb == 1)
         ft_printf("error : instruct is invalid\n");
     else if (nb == 2)
-        ft_printf("error : instruct count is not 1\n");
+        ft_printf("error : two args, but not exactly one instruct\n");
     else if (nb == 3)
-        ft_printf("error : more than two arguments\n");
+        ft_printf("error : arg count wrong\n");
     else if (nb == 4)
         ft_printf("error : \n");
     else if (nb == 5)
@@ -37,4 +37,15 @@ size_t debugg(ssize_t nb)
     else if (nb == 10)
         ft_printf("error\n");
     return (-1);
+}
+size_t	ft_strlen(char const *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

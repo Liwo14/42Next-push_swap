@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/13 08:33:02 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/13 10:18:24 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ ssize_t check_input(int argc, char **argv)
     
     strategy = 0;
     checker = 0;
-    if (argc > 3)
+    if (argc > 3 || argc < 2)
         return (debugg(3));
     if (argc == 2)
     {
         strategy = 4;
-        if (char_check(argv, 2) == -1)
+        if (char_check(argv, 1) == -1)
             return (-1);
     }
     else if (argc == 3)
@@ -73,11 +73,36 @@ ssize_t check_input(int argc, char **argv)
     return (strategy);
     
 }
-/*
-split_correct_input()
+
+char **split_correct_input(const char *str, char c)
 {
-    
+	char	**tab;
+	int		i;
+	int		j;
+
+	j = 0;
+	if (str == NULL)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
+	if (tab == NULL)
+		return (NULL);
+	i = 0;
+	while (str[j] != '\0')
+	{
+		while (str[j] != '\0' && str[j] == c)
+			j++;
+		if (str[j] != '\0')
+		{
+			if (ft_add_word(tab, i, &str[j], c) == 0)
+				return (NULL);
+			i++;
+			go_to_next(str, &j, c);
+		}
+	}
+	tab[i] = NULL;
+	return (tab);
 }
+/*
 check_dup()
 {
     

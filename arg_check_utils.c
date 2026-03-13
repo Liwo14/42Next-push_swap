@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/13 08:26:19 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/13 10:37:16 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,20 @@ ssize_t parse_instruct(char **argv, ssize_t index)
         return (4);
     else
         return(debugg(1));
+}
+char *clean_str(const char **argv)
+{
+    char *tmp;
+    char *clean_str;
+    size_t i;
+    size_t j;
+    size_t size;
+
+    i = 1;
+    if ((argv[1][0] == '-') && (argv[1][1] == '-'))
+        i = 2;
+    size = ft_strlen(argv[i]);
+    tmp = malloc(sizeof(char) * size + 1);
+    
+    return (clean_str);
 }
