@@ -6,12 +6,12 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 10:24:46 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/13 10:25:50 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 10:44:53 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
 static int	ft_count_words(const char *str, char c)
 {
 	int	nb_word;
@@ -76,3 +76,4 @@ void	go_to_next(const char *str, int *j, char c)
 	while (str[*j] != '\0' && str[*j] != c)
 		(*j)++;
 }
+*/

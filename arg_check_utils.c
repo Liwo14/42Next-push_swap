@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 10:16:18 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 11:32:35 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,10 @@ ssize_t	parse_instruct(char **argv, ssize_t list_index)
 		return (debugg(1));
 }
 
-size_t	clean_string(char *clean_list, const char *list)
+ssize_t	clean_string(char *clean_list, const char *list)
 {
-	size_t	i;
-	size_t	j;
+	ssize_t	i;
+	ssize_t	j;
 
 	i = 0;
 	j = 0;
@@ -82,12 +82,13 @@ size_t	clean_string(char *clean_list, const char *list)
 		i++;
 	while (list[i] != '\0')
 	{
-		if ((list[i] == '-' && list[i + 1] == '-')
-            || (list[i] == '-' && list[i + 1] == '\0')
+        if (list[i] != ' ' && list[i + 1] == '-')
+            return (-1);
+		if ((list[i] == '-' && list[i + 1] == '\0')
                 || (list[i] == '-' && list[i + 1] == ' ')
                     || (list[i] == ' ' && list[i + 1] == ' ')
                         || (list[i] == ' ' && list[i + 1] == '\0'))
-			i++;
+        i++;
 		else
         {
 			clean_list[j] = list[i];

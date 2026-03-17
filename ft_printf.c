@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 08:28:44 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 08:56:54 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 10:38:04 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	ft_puthex(unsigned int n, char base_type)
 	return (count);
 }
 
+
 int	ft_parse(char arg_type, va_list args)
 {
 	int	count;
@@ -59,7 +60,6 @@ int	ft_parse(char arg_type, va_list args)
 		count += ft_puthex(va_arg(args, unsigned int), arg_type);
 	return (count);
 }
-
 
 int	ft_printf(const char *input, ...)
 {

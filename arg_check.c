@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 10:18:21 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 11:20:06 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ ssize_t find_list(int argc, char **argv)
         return (debugg(4));
     if ((argc == 3) && (argv[2][0] == '\0'))
         return (debugg(4));
-    if ((argc == 3) && ((argv[1][0] == '-') && (argv[1][1] == '-')))
-        list_index == 2;
+    if (argc == 3)
+    {
+        if ((argv[1][0] == '-') && (argv[1][1] == '-'))
+            list_index = 2;
+    }
     return (list_index);
 }
 
@@ -51,19 +54,24 @@ ssize_t check_input(int argc, char **argv, ssize_t list_index)
     
 }
 
-char *clean_list(const char **argv, ssize_t list_index)
+char *clean_list(char **argv, ssize_t list_index)
 {
     char *tmp;
     char *clean_str;
-    size_t j;
-    size_t len;
+    ssize_t len;
 
     len = ft_strlen(argv[list_index]);
     tmp = malloc(sizeof(char) * len + 1);
     tmp[len] = '\0';
-    len = clean_string(&tmp, argv[list_index]);
+    len = clean_string(tmp, argv[list_index]);
+    if (len == -1)
+    {
+        free(tmp);
+        debugg(5);
+        exit(1);
+    }
     clean_str = malloc(sizeof(char) * len + 1);
-    clean_string(&clean_str, &tmp);
+    clean_string(clean_str, tmp);
     free(tmp);
     return (clean_str);
 }
