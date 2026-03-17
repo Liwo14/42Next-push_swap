@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/13 10:37:16 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 08:02:48 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,32 +31,36 @@ ssize_t	ft_strcmp(const char *s1, const char *s2)
     else
 	    return (debugg(10));
 }
-ssize_t parse_instruct(char **argv, ssize_t index)
+ssize_t parse_instruct(char **argv, int list_index)
 {
-    if (ft_strcmp(argv[index], "--simple") == 1)
+    int instruct_index;
+    
+    
+    if (list_index == 1)
+        instruct_index = 2;
+    else if (list_index == 2)
+        instruct_index = 1;
+    if (ft_strcmp(argv[instruct_index], "--simple") == 1)
         return (1);
-    else if (ft_strcmp(argv[index], "--medium") == 1)
+    else if (ft_strcmp(argv[instruct_index], "--medium") == 1)
         return (2);
-    else if (ft_strcmp(argv[index], "--complex") == 1)
+    else if (ft_strcmp(argv[instruct_index], "--complex") == 1)
         return (3);
-    else if (ft_strcmp(argv[index], "--adaptative") == 1)
+    else if (ft_strcmp(argv[instruct_index], "--adaptative") == 1)
         return (4);
     else
         return(debugg(1));
 }
-char *clean_str(const char **argv)
+char *clean_list(const char **argv, int list_index)
 {
     char *tmp;
     char *clean_str;
-    size_t i;
     size_t j;
-    size_t size;
+    size_t len;
 
-    i = 1;
-    if ((argv[1][0] == '-') && (argv[1][1] == '-'))
-        i = 2;
-    size = ft_strlen(argv[i]);
-    tmp = malloc(sizeof(char) * size + 1);
+    len = ft_strlen(argv[list_index]);
+    tmp = malloc(sizeof(char) * len + 1);
+    tmp[len] = '\0';
     
     return (clean_str);
 }
