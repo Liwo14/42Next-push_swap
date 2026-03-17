@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:59:28 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 08:57:03 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 09:38:18 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ssize_t debugg(ssize_t nb)
     else if (nb == 3)
         ft_printf("error : arg count wrong\n");
     else if (nb == 4)
-        ft_printf("error : \n");
+        ft_printf("error : empty input\n");
     else if (nb == 5)
         ft_printf("error : \n");
     else if (nb == 6)
@@ -49,4 +49,33 @@ size_t	ft_strlen(char const *str)
 		i++;
 	}
 	return (i);
+}
+
+char **split(const char *str, char c)
+{
+	char	**tab;
+	int		i;
+	int		j;
+
+	j = 0;
+	if (str == NULL)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
+	if (tab == NULL)
+		return (NULL);
+	i = 0;
+	while (str[j] != '\0')
+	{
+		while (str[j] != '\0' && str[j] == c)
+			j++;
+		if (str[j] != '\0')
+		{
+			if (ft_add_word(tab, i, &str[j], c) == 0)
+				return (NULL);
+			i++;
+			go_to_next(str, &j, c);
+		}
+	}
+	tab[i] = NULL;
+	return (tab);
 }

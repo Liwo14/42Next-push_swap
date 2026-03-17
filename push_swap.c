@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:16:48 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 08:51:14 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 10:20:29 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,24 @@
 int	main(int argc, char **argv)
 {
     ssize_t strategy;
-    int list_index;
+    ssize_t list_index;
     char **list;
     char *str;
 
-    list_index = 1;
-    if ((argc == 3) && ((argv[1][0] == '-') && (argv[1][1] == '-')))
-        list_index == 2;
-    strategy = 0;
+    list_index = find_list(argc, argv);
+    if (list_index == -1)
+        exit (1);
     strategy = check_input(argc, argv, list_index);
     if (strategy == -1 || strategy == 0)
         exit (1);
-    ft_printf("Strategy is %d", strategy);
+    ft_printf("Strategy is %d \n", strategy);
     str = clean_list(argv, list_index);
+    ft_printf("Clean str is %s \n", str);
+    return (0);
+    /*
     list = split(str, ' ');
     if (check_dup(list) == -1)
         exit (-1);
    return (0);
+   */
 }

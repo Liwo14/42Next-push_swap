@@ -6,21 +6,35 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 08:57:29 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 10:18:21 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-ssize_t check_input(int argc, char **argv, int list_index)
+ssize_t find_list(int argc, char **argv)
+{
+    ssize_t list_index;
+    
+    list_index = 1;
+    if (argc > 3 || argc < 2)
+        return (debugg(3));
+    if (argv[1][0] == '\0')
+        return (debugg(4));
+    if ((argc == 3) && (argv[2][0] == '\0'))
+        return (debugg(4));
+    if ((argc == 3) && ((argv[1][0] == '-') && (argv[1][1] == '-')))
+        list_index == 2;
+    return (list_index);
+}
+
+ssize_t check_input(int argc, char **argv, ssize_t list_index)
 {
     ssize_t checker;
     ssize_t strategy;
     
     strategy = 4;
     checker = 0;
-    if (argc > 3 || argc < 2)
-        return (debugg(3));
     if (argc == 3)
     {
         if ((argv[1][0] == '-') && (argv[1][1] == '-'))
@@ -37,36 +51,7 @@ ssize_t check_input(int argc, char **argv, int list_index)
     
 }
 
-char **split(const char *str, char c)
-{
-	char	**tab;
-	int		i;
-	int		j;
-
-	j = 0;
-	if (str == NULL)
-		return (NULL);
-	tab = (char **)malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
-	if (tab == NULL)
-		return (NULL);
-	i = 0;
-	while (str[j] != '\0')
-	{
-		while (str[j] != '\0' && str[j] == c)
-			j++;
-		if (str[j] != '\0')
-		{
-			if (ft_add_word(tab, i, &str[j], c) == 0)
-				return (NULL);
-			i++;
-			go_to_next(str, &j, c);
-		}
-	}
-	tab[i] = NULL;
-	return (tab);
-}
-
-char *clean_list(const char **argv, int list_index)
+char *clean_list(const char **argv, ssize_t list_index)
 {
     char *tmp;
     char *clean_str;
@@ -76,10 +61,14 @@ char *clean_list(const char **argv, int list_index)
     len = ft_strlen(argv[list_index]);
     tmp = malloc(sizeof(char) * len + 1);
     tmp[len] = '\0';
-    
-    
+    len = clean_string(&tmp, argv[list_index]);
+    clean_str = malloc(sizeof(char) * len + 1);
+    clean_string(&clean_str, &tmp);
+    free(tmp);
     return (clean_str);
 }
+
+
 
 /*
 check_dup()
