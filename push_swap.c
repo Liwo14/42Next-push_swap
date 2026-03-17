@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:16:48 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 08:03:09 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 08:51:14 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	main(int argc, char **argv)
     if (strategy == -1 || strategy == 0)
         exit (1);
     ft_printf("Strategy is %d", strategy);
-    str = clean_list(argv);
-    list = split_correct_input(str, ' ');
+    str = clean_list(argv, list_index);
+    list = split(str, ' ');
     if (check_dup(list) == -1)
         exit (-1);
    return (0);

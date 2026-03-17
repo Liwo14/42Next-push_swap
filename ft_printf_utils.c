@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:10:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 08:10:40 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 08:56:45 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int	ft_putstr(char *str)
 	}
 	return (i);
 }
+
 int	ft_putunbr(unsigned int n)
 {
 	int	count;

@@ -6,11 +6,30 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 08:02:48 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 08:56:28 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+ssize_t char_check(char **argv, int list_index)
+{
+    int i;
+
+    i = 0;
+    while (argv[list_index][i]) 
+    {
+        if (argv[list_index][i] == '-' )
+            i++;
+        else if  (argv[list_index][i] == ' ' )
+            i++;
+        else if ((argv[list_index][i]  < '0') || (argv[list_index][i]  > '9'))
+            return (-1);
+        else 
+            i++;
+    }
+    return (0);
+}
 
 ssize_t	ft_strcmp(const char *s1, const char *s2)
 {
@@ -31,6 +50,7 @@ ssize_t	ft_strcmp(const char *s1, const char *s2)
     else
 	    return (debugg(10));
 }
+
 ssize_t parse_instruct(char **argv, int list_index)
 {
     int instruct_index;
@@ -51,16 +71,4 @@ ssize_t parse_instruct(char **argv, int list_index)
     else
         return(debugg(1));
 }
-char *clean_list(const char **argv, int list_index)
-{
-    char *tmp;
-    char *clean_str;
-    size_t j;
-    size_t len;
 
-    len = ft_strlen(argv[list_index]);
-    tmp = malloc(sizeof(char) * len + 1);
-    tmp[len] = '\0';
-    
-    return (clean_str);
-}

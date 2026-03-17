@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 08:10:30 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/17 08:51:29 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ ssize_t char_check(char **argv, int list_index);
 ssize_t check_input(int argc, char **argv, int list_index);
 ssize_t debugg(ssize_t nb);
 size_t	ft_strlen(char const *str);
-char **split_correct_input(const char *str, char c);
-char *clean_list(const char *str);
+char **split(const char *str, char c);
+char *clean_list(const char *str, int list_index);
 
 int	ft_printf(const char *input, ...);
 int	ft_putchar(char c);
