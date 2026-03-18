@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_check_utils.c                                  :+:      :+:    :+:   */
+/*   cc_arg_check_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 11:32:35 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/18 09:17:24 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "cc_push_swap.h"
 
 ssize_t	char_check(char **argv, ssize_t list_index)
 {

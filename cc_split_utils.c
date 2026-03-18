@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   split_utils.c                                      :+:      :+:    :+:   */
+/*   cc_split_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 10:24:46 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/17 10:44:53 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/18 09:17:50 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "cc_push_swap.h"
 /*
 static int	ft_count_words(const char *str, char c)
 {
