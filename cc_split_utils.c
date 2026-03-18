@@ -6,13 +6,13 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 10:24:46 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 09:17:50 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/18 09:38:29 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cc_push_swap.h"
-/*
-static int	ft_count_words(const char *str, char c)
+
+int	ft_count_words(const char *str, char c)
 {
 	int	nb_word;
 	int	new_word;
@@ -34,7 +34,7 @@ static int	ft_count_words(const char *str, char c)
 	}
 	return (nb_word);
 }
-static char	*ft_alloc_word(char const *str, char c)
+char	*ft_alloc_word(char const *str, char c)
 {
 	int		len;
 	char	*word;
@@ -55,7 +55,7 @@ static char	*ft_alloc_word(char const *str, char c)
 	word[len] = '\0';
 	return (word);
 }
-static int	ft_add_word(char **tab, int i, char const *str, char c)
+int	ft_add_word(char **tab, int i, char const *str, char c)
 {
 	tab[i] = ft_alloc_word(str, c);
 	if (tab[i] == NULL)
@@ -76,4 +76,3 @@ void	go_to_next(const char *str, int *j, char c)
 	while (str[*j] != '\0' && str[*j] != c)
 		(*j)++;
 }
-*/

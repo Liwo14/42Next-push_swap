@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 09:17:32 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/18 10:58:40 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,3 @@ char *clean_list(char **argv, ssize_t list_index)
     return (clean_str);
 }
 
-
-
-/*
-check_dup()
-{
-    
-}
-*/

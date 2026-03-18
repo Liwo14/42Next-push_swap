@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:59:28 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 09:17:42 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/18 11:21:04 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ ssize_t debugg(ssize_t nb)
     else if (nb == 5)
         ft_printf("error : no space before '-'.\n");
     else if (nb == 6)
-        ft_printf("error : \n");
+        ft_printf("error : same number found twice in the list\n");
     else if (nb == 7)
-        ft_printf("error : \n");
+        ft_printf("error : number too long\n");
     else if (nb == 8)
         ft_printf("error : \n");
     else if (nb == 9)
@@ -50,7 +50,7 @@ size_t	ft_strlen(char const *str)
 	}
 	return (i);
 }
-/*
+
 char **split(char *str, char c)
 {
 	char	**tab;
@@ -79,4 +79,4 @@ char **split(char *str, char c)
 	tab[i] = NULL;
 	return (tab);
 }
-*/
+
