@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 09:17:24 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/20 08:50:57 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,28 @@ ssize_t	clean_string(char *clean_list, const char *list)
 	}
 	clean_list[j] = '\0';
 	return (j - 1);
+}
+
+ssize_t	ft_atoi(const char *str)
+{
+	ssize_t	i;
+	ssize_t	sign;
+	ssize_t	nb;
+
+	nb = 0;
+	sign = 1;
+	i = 0;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign = -sign;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = (nb * 10) + (str[i] - '0');
+		i++;
+	}
+	nb = (nb * sign);
+	return (nb);
 }

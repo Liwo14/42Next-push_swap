@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 10:58:40 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/20 09:24:09 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,34 @@ char *clean_list(char **argv, ssize_t list_index)
     clean_string(clean_str, tmp);
     free(tmp);
     return (clean_str);
+}
+
+ssize_t check_list(char **list)
+{
+    size_t i;
+    size_t j;
+    ssize_t nb;
+
+    i = 0;
+    j = 1;
+    while (list[j] != NULL)
+    {
+        if (ft_strcmp(list[i], list[j]) != -1)
+            return(debugg(6));
+        j++;
+        i++;
+    }
+    i = 0;
+    while (list[i] != NULL)
+    {
+        if (ft_strlen(list[i]) > 11)
+            return(debugg(7));
+        nb = ft_atoi(list[i]);
+        if (nb > 2147483647 || nb < -2147483648)
+            return(debugg(7));
+        ft_printf("nb = %d\n", nb);
+        i++;
+    }
+    return(1);
 }
 

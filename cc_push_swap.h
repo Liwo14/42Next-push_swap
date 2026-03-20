@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 12:20:11 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/20 08:57:23 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,9 @@ ssize_t	clean_string(char *clean_list, const char *list);
 ssize_t	parse_instruct(char **argv, ssize_t list_index);
 ssize_t	char_check(char **argv, ssize_t list_index);
 ssize_t	ft_strcmp(const char *s1, const char *s2);
-ssize_t is_it_too_long(char *list, size_t i);
 ssize_t	find_list(int argc, char **argv);
+ssize_t	ft_atoi(const char *str);
 ssize_t	check_list(char **list);
-ssize_t check_min_max(char **list);
-ssize_t	check_dup(char **list);
 ssize_t	debugg(ssize_t nb);
 size_t	ft_strlen(char const *str);
 int		ft_add_word(char **tab, int i, char const *str, char c);

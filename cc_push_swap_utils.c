@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:59:28 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 11:21:04 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/03/20 09:23:52 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ssize_t debugg(ssize_t nb)
     else if (nb == 6)
         ft_printf("error : same number found twice in the list\n");
     else if (nb == 7)
-        ft_printf("error : number too long\n");
+        ft_printf("error : number out of range\n");
     else if (nb == 8)
         ft_printf("error : \n");
     else if (nb == 9)
