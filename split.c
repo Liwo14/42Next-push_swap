@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cc_split_utils.c                                   :+:      :+:    :+:   */
+/*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 10:24:46 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 09:38:29 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/02 06:57:08 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_push_swap.h"
+#include "push_swap.h"
 
-int	ft_count_words(const char *str, char c)
+static int	ft_count_words(const char *str, char c)
 {
 	int	nb_word;
 	int	new_word;
@@ -34,7 +34,8 @@ int	ft_count_words(const char *str, char c)
 	}
 	return (nb_word);
 }
-char	*ft_alloc_word(char const *str, char c)
+
+static char	*ft_alloc_word(char const *str, char c)
 {
 	int		len;
 	char	*word;
@@ -55,7 +56,8 @@ char	*ft_alloc_word(char const *str, char c)
 	word[len] = '\0';
 	return (word);
 }
-int	ft_add_word(char **tab, int i, char const *str, char c)
+
+static int	ft_add_word(char **tab, int i, char const *str, char c)
 {
 	tab[i] = ft_alloc_word(str, c);
 	if (tab[i] == NULL)
@@ -71,8 +73,38 @@ int	ft_add_word(char **tab, int i, char const *str, char c)
 	}
 	return (1);
 }
-void	go_to_next(const char *str, int *j, char c)
+
+static void	go_to_next(const char *str, int *j, char c)
 {
 	while (str[*j] != '\0' && str[*j] != c)
 		(*j)++;
+}
+
+char **split(char *str, char c)
+{
+	char	**tab;
+	int		i;
+	int		j;
+
+	j = 0;
+	if (str == NULL)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
+	if (tab == NULL)
+		return (NULL);
+	i = 0;
+	while (str[j] != '\0')
+	{
+		while (str[j] != '\0' && str[j] == c)
+			j++;
+		if (str[j] != '\0')
+		{
+			if (ft_add_word(tab, i, &str[j], c) == 0)
+				return (NULL);
+			i++;
+			go_to_next(str, &j, c);
+		}
+	}
+	tab[i] = NULL;
+	return (tab);
 }

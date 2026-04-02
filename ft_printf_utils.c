@@ -1,41 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cc_ft_printf.c                                     :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 08:28:44 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 10:00:24 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/02 06:53:57 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_push_swap.h"
+#include "push_swap.h"
 
-int	ft_putchar(char c)
+static int	ft_putstr(char *str)
 {
-	write(1, &c, 1);
-	return (1);
+	int	i;
+
+	if (!str)
+		return (ft_putstr("(null)"));
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }
 
-int	ft_puthex(unsigned int n, char base_type)
+static int	ft_putnbr(int n)
 {
 	int		count;
-	char	*base;
+	long	nb;
 
 	count = 0;
-	if (base_type == 'x')
-		base = "0123456789abcdef";
-	else
-		base = "0123456789ABCDEF";
-	if (n >= 16)
-		count += ft_puthex(n / 16, base_type);
-	count += ft_putchar(base[n % 16]);
+	nb = n;
+	if (nb < 0)
+	{
+		count += ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb > 9)
+		count += ft_putnbr(nb / 10);
+	count += ft_putchar((nb % 10) + '0');
 	return (count);
 }
 
+static int	ft_putunbr(unsigned int n)
+{
+	int	count;
 
-int	ft_parse(char arg_type, va_list args)
+	count = 0;
+	if (n > 9)
+		count += ft_putunbr(n / 10);
+	count += ft_putchar((n % 10) + '0');
+	return (count);
+}
+
+int	ft_printf_parse(char arg_type, va_list args)
 {
 	int	count;
 
@@ -46,37 +67,11 @@ int	ft_parse(char arg_type, va_list args)
 		count += ft_putchar(va_arg(args, int));
 	else if (arg_type == 's')
 		count += ft_putstr(va_arg(args, char *));
-	else if (arg_type == 'p')
-		count += ft_putptr(va_arg(args, void *));
 	else if (arg_type == 'd')
 		count += ft_putnbr(va_arg(args, int));
 	else if (arg_type == 'i')
 		count += ft_putnbr(va_arg(args, int));
 	else if (arg_type == 'u')
 		count += ft_putunbr(va_arg(args, unsigned int));
-	else if (arg_type == 'x')
-		count += ft_puthex(va_arg(args, unsigned int), arg_type);
-	else if (arg_type == 'X')
-		count += ft_puthex(va_arg(args, unsigned int), arg_type);
-	return (count);
-}
-
-int	ft_printf(const char *input, ...)
-{
-	va_list	args;
-	int		i;
-	int		count;
-
-	count = 0;
-	i = 0;
-	va_start(args, input);
-	while (input[i])
-	{
-		if (input[i] == '%')
-			count += ft_parse(input[++i], args);
-		else
-			count += ft_putchar(input[i]);
-		i++;
-	}
 	return (count);
 }

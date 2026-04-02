@@ -1,13 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cc_init.c                                          :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/18 09:17:40 by ccolnat          ###   ########.fr       */
+/*   Created: 2026/01/14 08:28:44 by ccolnat           #+#    #+#             */
+/*   Updated: 2026/04/02 06:42:40 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_push_swap.h"
+#include "push_swap.h"
+
+int	ft_printf(const char *input, ...)
+{
+	va_list	args;
+	int		i;
+	int		count;
+
+	count = 0;
+	i = 0;
+	va_start(args, input);
+	while (input[i])
+	{
+		if (input[i] == '%')
+			count += ft_printf_parse(input[++i], args);
+		else
+			count += ft_putchar(input[i]);
+		i++;
+	}
+	return (count);
+}

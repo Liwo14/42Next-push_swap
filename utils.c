@@ -1,16 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cc_push_swap_utils.c                               :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 13:59:28 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/03/20 09:23:52 by ccolnat          ###   ########.fr       */
+/*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
+/*   Updated: 2026/04/02 06:36:53 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_push_swap.h"
+#include "push_swap.h"
+
+ssize_t	ft_strcmp(const char *s1, const char *s2)
+{
+	ssize_t	i;
+
+	i = 0;
+	if ((s1[0] == '\0') || (s2[0] == '\0'))
+		return (debugg(10));
+	while ((s1[i] != '\0') || (s2[i] != '\0'))
+	{
+		if (s1[i] == s2[i])
+			i++;
+		else if (s1[i] != s2[i])
+			return (-1);
+	}
+	if ((s1[i] == '\0') && (s2[i] == '\0'))
+		return (1);
+	else
+		return (debugg(10));
+}
 
 ssize_t debugg(ssize_t nb)
 {
@@ -36,7 +56,7 @@ ssize_t debugg(ssize_t nb)
         ft_printf("error : \n");
     else if (nb == 10)
         ft_printf("error\n");
-    return (-1);
+    exit(1);
 }
 
 size_t	ft_strlen(char const *str)
@@ -51,32 +71,33 @@ size_t	ft_strlen(char const *str)
 	return (i);
 }
 
-char **split(char *str, char c)
+ssize_t	ft_atoi(const char *str)
 {
-	char	**tab;
-	int		i;
-	int		j;
+	ssize_t	i;
+	ssize_t	sign;
+	ssize_t	nb;
 
-	j = 0;
-	if (str == NULL)
-		return (NULL);
-	tab = (char **)malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
-	if (tab == NULL)
-		return (NULL);
+	nb = 0;
+	sign = 1;
 	i = 0;
-	while (str[j] != '\0')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		while (str[j] != '\0' && str[j] == c)
-			j++;
-		if (str[j] != '\0')
-		{
-			if (ft_add_word(tab, i, &str[j], c) == 0)
-				return (NULL);
-			i++;
-			go_to_next(str, &j, c);
-		}
+		if (str[i] == '-')
+			sign = -sign;
+		i++;
 	}
-	tab[i] = NULL;
-	return (tab);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = (nb * 10) + (str[i] - '0');
+		i++;
+	}
+	nb = (nb * sign);
+	return (nb);
+}
+
+int	ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
 }
 
