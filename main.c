@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:16:48 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/02 07:25:16 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/02 07:57:10 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ static ssize_t find_list(int argc, char **argv)
     }
     return (list_index);
 }
-/*
-static void push_swap(t_stack **stack_a, t_stack **stack_b, ssize_t strategy)
-{
-    return;
-}
-*/
 
 int main(int argc, char **argv)
 {
@@ -43,13 +37,10 @@ int main(int argc, char **argv)
     ssize_t strategy;
     //t_stack *stack_a;
     //t_stack *stack_b;
-
     list_index = find_list(argc, argv);//OK
     strategy = check_input(argc, argv, list_index);//OK
     ft_printf("Strategy is %d \n", strategy);
-    init(argv, list_index);
-    //if (strategy == 4)
-    //    strategy = disorder(&stack_a)
+    init(argv, list_index); //, &stack_a, &stack_b);
     //push_swap(&stack_a, &stack_b, strategy);
     return(0);
 }

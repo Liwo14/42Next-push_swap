@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/02 06:58:07 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/02 07:27:17 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,5 @@ int	ft_printf(const char *input, ...);
 int	ft_putchar(char c);
 void init(char **argv, ssize_t list_index);
 size_t	ft_strlen(char const *str);
-
-
 
 #endif
