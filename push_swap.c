@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 07:34:00 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/02 09:26:20 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/03 09:29:35 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ static size_t disorder_level(t_stack **stack_a)
             mistakes ++;
         current = current->next;
     }
-    if (disorder < 0.2)
+    if (pairs / mistakes < 0.2)
         strategy = 1;
-    else if (disorder > 0.5)
+    else if (pairs / mistakes > 0.5)
         strategy = 3;
     else 
         strategy = 2;

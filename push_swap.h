@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/02 07:27:17 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/03 06:50:27 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,8 @@ typedef struct s_stack
 {
     size_t  value;
     size_t  index;
-    size_t  pos;
-    size_t  target_pos;
-    size_t  cost_a;
-    size_t  cost_b;
     struct s_stack *next;
+    struct s_stack *prev;
 }   t_stack;
 
 ssize_t check_input(int argc, char **argv, ssize_t list_index);

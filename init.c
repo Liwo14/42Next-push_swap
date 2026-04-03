@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/02 08:01:48 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/03 09:27:15 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ void init(char **argv, ssize_t list_index)//,t_stack **stack_a, t_stack **stack_
     list = split(str, ' ');
     if (check_list(list) == -1)
         exit(1);
-    //init_list(&stack_a, &stack_b, str);
+    //init_list(&stack_a, &stack_b, &list);
     
 }
 /*
-static void init_list(t_stack **stack_a, t_stack **stack_b, char **str)
+static void init_list(t_stack **stack_a, t_stack **stack_b, char **list)
 {
     *stack_a = JSP
     *stack_b = NULL;
