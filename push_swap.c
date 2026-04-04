@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 07:34:00 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/03 09:29:35 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/04 08:03:49 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ static size_t disorder_level(t_stack **stack_a)
 void push_swap(t_stack **stack_a, t_stack **stack_b, ssize_t strategy)
 {
     if (strategy == 4)
-        strategy = disorder_level(&stack_a)
+        strategy = disorder_level(&stack_a);
 }
-*/
+

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/03 06:50:27 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/04 08:03:30 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
     struct s_stack *prev;
 }   t_stack;
 
+void init(char **argv, ssize_t list_index, t_stack **stack_a, t_stack **stack_b);
 ssize_t check_input(int argc, char **argv, ssize_t list_index);
 ssize_t	ft_strcmp(const char *s1, const char *s2);
 ssize_t	ft_atoi(const char *str);
@@ -35,7 +36,6 @@ char **split(char *str, char c);
 int	ft_printf_parse(char arg_type, va_list args);
 int	ft_printf(const char *input, ...);
 int	ft_putchar(char c);
-void init(char **argv, ssize_t list_index);
 size_t	ft_strlen(char const *str);
 
 #endif
