@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/04 08:10:00 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/06 07:49:59 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,6 @@ static ssize_t check_list(char **list)
     return(1);
 }
 
-void init(char **argv, ssize_t list_index, t_stack **stack_a, t_stack **stack_b)
-{
-    char **list;
-    char *str;
-
-    str = clean_list(argv, list_index);
-    ft_printf("Clean str is :%s.\n", str);
-    list = split(str, ' ');
-    if (check_list(list) == -1)
-        exit(1);
-    init_list(&stack_a, &stack_b, &list);
-    
-}
-
 static void init_list(t_stack **stack_a, t_stack **stack_b, char **list)
 {
     t_stack *stack_a;
@@ -74,3 +60,16 @@ static void init_list(t_stack **stack_a, t_stack **stack_b, char **list)
     return;
 }
 
+void init(char **argv, ssize_t list_index, t_stack **stack_a, t_stack **stack_b)
+{
+    char **list;
+    char *str;
+
+    str = clean_list(argv, list_index);
+    ft_printf("Clean str is :%s.\n", str);
+    list = split(str, ' ');
+    if (check_list(list) == -1)
+        exit(1);
+    init_list(&stack_a, &stack_b, &list);
+    
+}
