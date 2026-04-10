@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 09:13:25 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/10 08:51:43 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 09:01:16 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	get_stack_size(t_stack *head)
 	return (i);
 }
 
-int direction(t_stack *tmp, int val, int max)
+int	direction(t_stack *tmp, int val, int max)
 {
 	while (max > 0)
 	{
@@ -74,7 +74,7 @@ int direction(t_stack *tmp, int val, int max)
 		max--;
 		tmp = tmp->next;
 	}
-	return (0);	
+	return (0);
 }
 
 int	is_sorted(t_stack *head)
@@ -84,7 +84,6 @@ int	is_sorted(t_stack *head)
 	if (!head || head->next == head)
 		return (1);
 	tmp = head;
-	
 	while (tmp->next != head)
 	{
 		if (tmp->value > tmp->next->value)

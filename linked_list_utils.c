@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 08:11:24 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:39:55 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 09:00:57 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	add_bottom(t_stack **stack, t_stack *new)
 		*stack = new;
 		return ;
 	}
-    tail = (*stack)->prev;
-    tail->next = new;
-    new->prev = tail;
-    new->next = *stack;
-    (*stack)->prev = new;
+	tail = (*stack)->prev;
+	tail->next = new;
+	new->prev = tail;
+	new->next = *stack;
+	(*stack)->prev = new;
 }
