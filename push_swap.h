@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:59:58 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 09:12:52 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void				rev_rotate(t_stack **head);
 void				rotate(t_stack **head);
 void				swap(t_stack **head);
 void				rrb(t_stack **b);
+void				rra(t_stack **a);
 void				ra(t_stack **a);
 void				sa(t_stack **a);
 void				sb(t_stack **b);

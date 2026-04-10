@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:42:51 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 09:05:12 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	init_list(t_stack **stack_a, t_stack **stack_b, char **list)
 	}
 	*stack_a = fill_value(list, list_size);
 	*stack_b = NULL;
-	fill_index(stack_a, list_size);
+	fill_index(*stack_a, list_size);
 	free(list);
 	return ;
 }

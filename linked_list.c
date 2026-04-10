@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 07:25:24 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:41:14 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 09:17:23 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_stack	*fill_value(char **list, size_t list_size)
 	}
 	return (stack_a);
 }
-
+/*
 void	fill_index(t_stack *stack, size_t list_size)
 {
 	size_t	value;
@@ -56,4 +56,41 @@ void	fill_index(t_stack *stack, size_t list_size)
 		if (max != NULL)
 			max->index = list_size;
 	}
+}
+*/
+void	fill_index(t_stack *stack, size_t list_size)
+{
+	t_stack	*ptr;
+	t_stack	*highest;
+	ssize_t	value;
+	size_t	current_idx;
+
+	if (!stack)
+		return ;
+	current_idx = list_size - 1;
+	while (list_size > 0)
+	{
+		ptr = stack;
+		highest = NULL;
+		do {
+			if (ptr->index == 0) 
+			{
+				if (highest == NULL || ptr->value > highest->value)
+					highest = ptr;
+			}
+			ptr = ptr->next;
+		} while (ptr != stack);
+
+		if (highest != NULL)
+		{
+			highest->index = current_idx + 1;
+		}
+		current_idx--;
+		list_size--;
+	}
+	ptr = stack;
+	do {
+		ptr->index -= 1;
+		ptr = ptr->next;
+	} while (ptr != stack);
 }
