@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 07:25:24 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:09:11 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:41:14 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,11 @@ t_stack	*fill_value(char **list, size_t list_size)
 	size_t	i;
 
 	stack_a = NULL;
-	nb = 0;
 	i = 0;
 	while (i < list_size)
 	{
 		nb = ft_atoi(list[i]);
-		if (i == 0)
-			stack_a = new_stack(nb);
-		else
-			add_bottom(&stack_a, new_stack(nb));
+		add_bottom(&stack_a, new_stack(nb));
 		i++;
 	}
 	return (stack_a);

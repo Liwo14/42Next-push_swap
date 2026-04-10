@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 07:34:00 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:04:40 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:46:56 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,6 @@ static int	disorder_level(t_stack *head)
 		current = current->next;
 	}
 	return (get_strategy(mistakes, pairs));
-}
-
-size_t	stack_size(t_stack *stack)
-{
-	size_t	size;
-
-	size = 0;
-	if (!stack)
-		return (0);
-	while (stack)
-	{
-		stack = stack->next;
-		size++;
-	}
-	return (size);
 }
 
 void	push_swap(t_stack **stack_a, t_stack **stack_b, ssize_t strategy)

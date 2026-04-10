@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:04:43 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:48:23 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,9 @@ t_stack				*get_min_node(t_stack *head);
 t_stack				*get_max_node(t_stack *head);
 t_stack				*complex_sort(t_stack *head);
 t_stack				*medium_sort(t_stack *head);
-t_stack				*get_bottom(t_stack *stack);
 t_stack				*simple_sort(t_stack *head);
 t_stack				*new_stack(size_t value);
 
 size_t				ft_strlen(char const *str);
-size_t				stack_size(t_stack *stack);
 
 #endif
