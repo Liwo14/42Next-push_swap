@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 17:12:48 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/10 08:04:13 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:10:16 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ static void	process_bit(t_stack **head, t_stack **b, int s, int bit)
 
 t_stack	*complex_sort(t_stack *head)
 {
-	t_stack *stack_b;
-	int size;
-	int max_bits;
-	int i;
+	t_stack	*stack_b;
+	int		size;
+	int		max_bits;
+	int		i;
 
 	stack_b = NULL;
 	size = get_stack_size(head);

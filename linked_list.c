@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 07:25:24 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:04:33 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:09:11 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,4 @@ void	fill_index(t_stack *stack, size_t list_size)
 		if (max != NULL)
 			max->index = list_size;
 	}
-}
-
-fill_prev_next(stack_a, list_size)
-{
 }
