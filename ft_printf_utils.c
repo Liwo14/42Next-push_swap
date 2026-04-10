@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 08:28:44 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/02 06:53:57 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:04:16 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	ft_putunbr(unsigned int n)
 
 int	ft_printf_parse(char arg_type, va_list args)
 {
-	int	count;
+	int count;
 
 	count = 0;
 	if (arg_type == '%')

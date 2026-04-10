@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 08:28:44 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/02 06:42:40 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:04:20 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_printf(const char *input, ...)
 {
-	va_list	args;
-	int		i;
-	int		count;
+	va_list args;
+	int i;
+	int count;
 
 	count = 0;
 	i = 0;

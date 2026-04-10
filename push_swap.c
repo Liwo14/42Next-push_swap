@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 07:34:00 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/06 07:53:28 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:04:40 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static int	get_strategy(size_t mistakes, size_t pairs)
 
 static int	disorder_level(t_stack *head)
 {
-	size_t			mistakes;
-	size_t			pairs;
+	size_t	mistakes;
+	size_t	pairs;
 	t_stack	*current;
 	t_stack	*compare;
 
@@ -53,29 +53,29 @@ static int	disorder_level(t_stack *head)
 	return (get_strategy(mistakes, pairs));
 }
 
-size_t stack_size(t_stack *stack)
+size_t	stack_size(t_stack *stack)
 {
-    size_t size;
-    
-    size = 0;
-    if (!stack)
-        return(0);
-    while (stack)
-    {
-        stack = stack->next;
-        size++;
-    }
-    return (size);
+	size_t	size;
+
+	size = 0;
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		stack = stack->next;
+		size++;
+	}
+	return (size);
 }
 
-void push_swap(t_stack **stack_a, t_stack **stack_b, ssize_t strategy)
+void	push_swap(t_stack **stack_a, t_stack **stack_b, ssize_t strategy)
 {
-    if (strategy == 4)
-        strategy = disorder_level(&stack_a);
-    if (strategy == 1)
-        simple_sort(&stack_a);
-    if (strategy == 2)
-        medium_sort(&stack_a);
-    if (strategy == 3)
-        complex_sort(&stack_a);
+	if (strategy == 4)
+		strategy = disorder_level(&stack_a);
+	if (strategy == 1)
+		simple_sort(&stack_a);
+	if (strategy == 2)
+		medium_sort(&stack_a);
+	if (strategy == 3)
+		complex_sort(&stack_a);
 }

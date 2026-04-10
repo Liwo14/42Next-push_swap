@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/02 07:12:41 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:04:25 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,24 +51,24 @@ static ssize_t	char_check(char **argv, ssize_t list_index)
 	return (0);
 }
 
-ssize_t check_input(int argc, char **argv, ssize_t list_index)
+ssize_t	check_input(int argc, char **argv, ssize_t list_index)
 {
-    ssize_t checker;
-    ssize_t strategy;
-    
-    strategy = 4;
-    checker = 0;
-    if (argc == 3)
-    {
-        if ((argv[1][0] == '-') && (argv[1][1] == '-'))
-            checker++;
-        if ((argv[2][0] == '-') && (argv[2][1] == '-'))
-            checker++;
-        if (checker != 1)
-            return (debugg(2));
-        strategy = parse_instruct(argv, list_index);
-    }
-    if (char_check(argv, list_index) == -1)
-        return (debugg(0));
-    return (strategy);
+	ssize_t	checker;
+	ssize_t	strategy;
+
+	strategy = 4;
+	checker = 0;
+	if (argc == 3)
+	{
+		if ((argv[1][0] == '-') && (argv[1][1] == '-'))
+			checker++;
+		if ((argv[2][0] == '-') && (argv[2][1] == '-'))
+			checker++;
+		if (checker != 1)
+			return (debugg(2));
+		strategy = parse_instruct(argv, list_index);
+	}
+	if (char_check(argv, list_index) == -1)
+		return (debugg(0));
+	return (strategy);
 }
