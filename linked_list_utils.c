@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 08:11:24 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:04:30 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:17:33 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*new_stack(size_t value)
 {
 	t_stack	*new;
 
-	new = malloc(sizeof *new);
+	new = malloc(sizeof * new);
 	if (!new)
 		return (NULL);
 	new->value = value;

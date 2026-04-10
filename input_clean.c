@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:10:41 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:16:31 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static ssize_t	clean_string(char *clean_list, const char *list)
 		if (list[i] != ' ' && list[i + 1] == '-')
 			return (-1);
 		if ((list[i] == '-' && list[i + 1] == '\0') || (list[i] == '-' && list[i
-				+ 1] == ' ') || (list[i] == ' ' && list[i + 1] == ' ')
+					+ 1] == ' ') || (list[i] == ' ' && list[i + 1] == ' ')
 			|| (list[i] == ' ' && list[i + 1] == '\0'))
 			i++;
 		else
@@ -42,9 +42,9 @@ static ssize_t	clean_string(char *clean_list, const char *list)
 
 char	*clean_list(char **argv, ssize_t list_index)
 {
-	char *tmp;
-	char *clean_str;
-	ssize_t len;
+	char	*tmp;
+	char	*clean_str;
+	ssize_t	len;
 
 	len = ft_strlen(argv[list_index]);
 	tmp = malloc(sizeof(char) * len + 1);

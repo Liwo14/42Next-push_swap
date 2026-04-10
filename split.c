@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 10:24:46 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:11:04 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/10 08:12:27 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,9 @@ static void	go_to_next(const char *str, int *j, char c)
 
 char	**split(char *str, char c)
 {
-	char **tab;
-	int i;
-	int j;
+	char	**tab;
+	int		i;
+	int		j;
 
 	j = 0;
 	if (str == NULL)
