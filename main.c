@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:16:48 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 09:44:33 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 10:03:55 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,11 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	list_index = find_list(argc, argv);
+	if (list_index == -1)
+		return (1);
 	strategy = check_input(argc, argv, list_index);
+	if (strategy == -1)
+		return (1);	
 	init(argv, list_index, &stack_a, &stack_b);
 	push_swap(&stack_a, strategy);
 	free_stack(&stack_a);
