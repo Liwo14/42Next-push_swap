@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:04:25 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 09:11:12 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static ssize_t	parse_instruct(char **argv, ssize_t list_index)
 		return (2);
 	else if (ft_strcmp(argv[instruct_index], "--complex") == 1)
 		return (3);
-	else if (ft_strcmp(argv[instruct_index], "--adaptative") == 1)
+	else if (ft_strcmp(argv[instruct_index], "--adaptive") == 1)
 		return (4);
 	else
 		return (debugg(1));

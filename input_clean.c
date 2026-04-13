@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:16:31 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 09:55:44 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static ssize_t	clean_string(char *clean_list, const char *list)
 		}
 	}
 	clean_list[j] = '\0';
-	return (j - 1);
+	return (j);
 }
 
 char	*clean_list(char **argv, ssize_t list_index)
