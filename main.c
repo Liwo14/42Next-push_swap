@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:16:48 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 10:03:55 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 10:32:16 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,26 @@ static void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-int	main(int argc, char **argv)
+int    main(int argc, char **argv)
 {
-	ssize_t	list_index;
-	ssize_t	strategy;
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+    ssize_t    list_index;
+    ssize_t    strategy;
+    t_stack    *stack_a;
+    t_stack    *stack_b;
 
-	list_index = find_list(argc, argv);
-	if (list_index == -1)
-		return (1);
-	strategy = check_input(argc, argv, list_index);
-	if (strategy == -1)
-		return (1);	
-	init(argv, list_index, &stack_a, &stack_b);
-	push_swap(&stack_a, strategy);
-	free_stack(&stack_a);
-	return (0);
+    list_index = find_list(argc, argv);
+    strategy = check_input(argc, argv, list_index);
+    init(argv, list_index, &stack_a, &stack_b);
+    if (strategy == 1)
+    {
+        if (stack_a->prev->prev == stack_a && stack_a->value > stack_a->next->value)
+        {
+            write(1, "ra\n", 3);
+            free_stack(&stack_a);
+            return (0);
+        }
+    }
+    push_swap(&stack_a, strategy);
+    free_stack(&stack_a);
+    return (0);
 }
