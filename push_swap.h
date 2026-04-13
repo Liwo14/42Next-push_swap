@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 09:12:52 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 08:22:48 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void				push_swap(t_stack **stack_a, t_stack **stack_b,
 void				fill_index(t_stack *stack, size_t list_size);
 void				add_bottom(t_stack **stack, t_stack *new);
 void				push(t_stack **dest, t_stack **src);
+
 void				pa(t_stack **a, t_stack **b);
 void				pb(t_stack **a, t_stack **b);
 void				rrr(t_stack **a, t_stack **b);
@@ -72,8 +73,6 @@ t_stack				*complex_sort(t_stack *head);
 t_stack				*medium_sort(t_stack *head);
 t_stack				*simple_sort(t_stack *head);
 t_stack				*new_stack(size_t value);
-
-static void			push_to_dest(t_stack **dest, t_stack *node);
 
 size_t				ft_strlen(char const *str);
 

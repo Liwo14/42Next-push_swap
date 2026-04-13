@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 07:34:00 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 07:33:38 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 08:19:34 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, ssize_t strategy)
 	if (is_sorted(*stack_a) != 1)
 	{
 		if (strategy == 1)
-			simple_sort(*stack_a);
+			*stack_a = simple_sort(*stack_a);
 		if (strategy == 2)
-			medium_sort(*stack_a);
+			*stack_a = medium_sort(*stack_a);
 		if (strategy == 3)
-			complex_sort(*stack_a);
+			*stack_a = complex_sort(*stack_a);
 	}
 	if ((is_sorted(*stack_a) != 1))
 	{

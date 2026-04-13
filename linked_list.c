@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 07:25:24 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 09:17:23 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 08:27:52 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,41 +28,32 @@ t_stack	*fill_value(char **list, size_t list_size)
 	}
 	return (stack_a);
 }
-/*
-void	fill_index(t_stack *stack, size_t list_size)
-{
-	size_t	value;
-	t_stack	*ptr;
-	t_stack	*max;
 
-	while (--list_size > 0)
+static t_stack	*get_highest_unindexed(t_stack *stack)
+{
+	t_stack	*ptr;
+	t_stack	*highest;
+
+	ptr = stack;
+	highest = NULL;
+	while (ptr)
 	{
-		ptr = stack;
-		value = -2147483648;
-		max = NULL;
-		while (ptr)
+		if (ptr->index == 0)
 		{
-			if (ptr->value == -2147483648 && ptr->index == 0)
-				ptr->index = 1;
-			if (ptr->value > value && ptr->index == 0)
-			{
-				value = ptr->value;
-				max = ptr;
-				ptr = stack;
-			}
-			else
-				ptr = ptr->next;
+			if (highest == NULL || ptr->value > highest->value)
+				highest = ptr;
 		}
-		if (max != NULL)
-			max->index = list_size;
+		ptr = ptr->next;
+		if (ptr == stack)
+			break ;
 	}
+	return (highest);
 }
-*/
+
 void	fill_index(t_stack *stack, size_t list_size)
 {
 	t_stack	*ptr;
 	t_stack	*highest;
-	ssize_t	value;
 	size_t	current_idx;
 
 	if (!stack)
@@ -70,27 +61,18 @@ void	fill_index(t_stack *stack, size_t list_size)
 	current_idx = list_size - 1;
 	while (list_size > 0)
 	{
-		ptr = stack;
-		highest = NULL;
-		do {
-			if (ptr->index == 0) 
-			{
-				if (highest == NULL || ptr->value > highest->value)
-					highest = ptr;
-			}
-			ptr = ptr->next;
-		} while (ptr != stack);
-
+		highest = get_highest_unindexed(stack);
 		if (highest != NULL)
-		{
 			highest->index = current_idx + 1;
-		}
 		current_idx--;
 		list_size--;
 	}
 	ptr = stack;
-	do {
+	while (ptr)
+	{
 		ptr->index -= 1;
 		ptr = ptr->next;
-	} while (ptr != stack);
+		if (ptr == stack)
+			break ;
+	}
 }
