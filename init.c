@@ -6,13 +6,13 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 08:00:05 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 08:48:47 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static ssize_t check_dup(char **list)
+static ssize_t	check_dup(char **list)
 {
 	size_t	i;
 	size_t	j;
@@ -29,6 +29,7 @@ static ssize_t check_dup(char **list)
 		}
 		j++;
 	}
+	return (1);
 }
 
 static ssize_t	check_list(char **list)
@@ -46,7 +47,6 @@ static ssize_t	check_list(char **list)
 		nb = ft_atoi(list[i]);
 		if (nb > 2147483647 || nb < -2147483648)
 			return (debugg(7));
-		ft_printf("nb = %d\n", nb);
 		i++;
 	}
 	return (1);
@@ -80,4 +80,3 @@ void	init(char **argv, ssize_t list_index, t_stack **stack_a,
 		exit(1);
 	init_list(stack_a, stack_b, list);
 }
-

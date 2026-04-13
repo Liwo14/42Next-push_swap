@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:16:48 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 09:30:26 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 08:45:27 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ int	main(int argc, char **argv)
 
 	list_index = find_list(argc, argv);
 	strategy = check_input(argc, argv, list_index);
-	ft_printf("Strategy is %d \n", strategy);
 	init(argv, list_index, &stack_a, &stack_b);
-	push_swap(&stack_a, &stack_b, strategy);
+	push_swap(&stack_a, strategy);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 13:48:57 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/10 08:13:32 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 08:32:31 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ static int	ft_sqrt(int number)
 	return (i - 1);
 }
 
-static void	push_chunks_to_b(t_stack **a, t_stack **b, int size)
+static void	push_chunks_to_b(t_stack **a, t_stack **b, size_t size)
 {
-	int	chunk;
-	int	i;
+	size_t	chunk;
+	size_t	i;
 
 	chunk = ft_sqrt(size) + (size / 100);
 	i = 0;
