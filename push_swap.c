@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 07:34:00 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 09:05:18 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 11:41:12 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@ static int	get_strategy(size_t mistakes, size_t pairs)
 {
 	float	disorder;
 
-	if (pairs == 0)
+	if (pairs <= 10)
 		return (1);
+	if (pairs <= 100 && mistakes < 25)
+		return (1);
+	else if (pairs <= 100 && mistakes > 25)
+		return (2);
 	disorder = (float)mistakes / (float)pairs;
 	if (disorder < 0.2f)
 		return (1);
