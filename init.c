@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 09:53:41 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 10:34:45 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	init(char **argv, ssize_t list_index, t_stack **stack_a,
 {
 	char	**list;
 	char	*str;
-	ssize_t i;
+	ssize_t	i;
 
 	i = 0;
 	str = clean_list(argv, list_index);
