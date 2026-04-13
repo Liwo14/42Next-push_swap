@@ -6,28 +6,39 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 09:05:12 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 08:00:05 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static ssize_t	check_list(char **list)
+static ssize_t check_dup(char **list)
 {
 	size_t	i;
 	size_t	j;
+
+	j = 0;
+	while (list[j] != NULL)
+	{
+		i = j + 1;
+		while (list[i] != NULL)
+		{
+			if (ft_strcmp(list[i], list[j]) != -1)
+				return (-1);
+			i++;
+		}
+		j++;
+	}
+}
+
+static ssize_t	check_list(char **list)
+{
+	size_t	i;
 	ssize_t	nb;
 
 	i = 0;
-	j = 1;
-	while (list[j] != NULL)
-	{
-		if (ft_strcmp(list[i], list[j]) != -1)
-			return (debugg(6));
-		j++;
-		i++;
-	}
-	i = 0;
+	if (check_dup(list) == -1)
+		return (debugg(6));
 	while (list[i] != NULL)
 	{
 		if (ft_strlen(list[i]) > 11)
@@ -69,3 +80,4 @@ void	init(char **argv, ssize_t list_index, t_stack **stack_a,
 		exit(1);
 	init_list(stack_a, stack_b, list);
 }
+

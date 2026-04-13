@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 08:04:55 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/13 07:31:30 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ ssize_t	debugg(ssize_t nb)
 	else if (nb == 7)
 		ft_printf("error : number out of range\n");
 	else if (nb == 8)
-		ft_printf("error : \n");
+		ft_printf("error, not sorted\n");
 	else if (nb == 9)
 		ft_printf("error : \n");
 	else if (nb == 10)
