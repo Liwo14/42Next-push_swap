@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 13:18:33 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 13:28:04 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,10 @@ char	*extract_str(char **argv)
 {
 	size_t	flag_index;
 	size_t	i;
-	size_t	j;
 	size_t	total_len;
 	char	*raw_str;
 
 	i = 1;
-	j = 0;
 	flag_index = find_flag(argv);
 	total_len = total_size(argv, flag_index);
 	raw_str = malloc(sizeof(char) * total_len + 1);

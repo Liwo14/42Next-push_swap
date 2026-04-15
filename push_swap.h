@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 13:16:59 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 13:23:30 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ ssize_t				ultra_simple_sort(t_stack **stack_a);
 ssize_t				check_flag(int argc, char **argv);
 ssize_t				ft_atoi(const char *str);
 ssize_t				find_flag(char **argv);
+ssize_t				char_check(char *str);
 ssize_t				debugg(ssize_t nb);
 
 int					ft_printf_parse(char arg_type, va_list args);
