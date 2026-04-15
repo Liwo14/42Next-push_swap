@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 11:38:31 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 14:07:07 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,7 @@ ssize_t	ft_strcmp(const char *s1, const char *s2)
 
 ssize_t	debugg(ssize_t nb)
 {
-	if (nb == 0)
-		ft_printf("error : arg in list is not a number.\n");
-	else if (nb == 1)
-		ft_printf("error : instruct is invalid.\n");
-	else if (nb == 2)
-		ft_printf("error : not exactly one instruct.\n");
-	else if (nb == 4)
-		ft_printf("error : empty input.\n");
-	else if (nb == 5)
-		ft_printf("error : no space before '-'.\n");
-	else if (nb == 6)
-		ft_printf("error : same number found twice in the list\n");
-	else if (nb == 7)
-		ft_printf("error : number out of range\n");
-	else if (nb == 8)
-		ft_printf("error, not sorted\n");
-	else if (nb == 9)
-		ft_printf("error : \n");
-	if (nb > 15)
+	if (nb >= 0)
 		ft_printf("Error\n");
 	return (-1);
 }

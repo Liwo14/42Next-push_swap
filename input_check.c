@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 13:31:08 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 14:04:14 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ ssize_t	check_flag(int argc, char **str)
 	{
 		flag_index = find_flag(str);
 		if (flag_index == -1)
-			return (debugg(1));
+			return (-1);
 		if (flag_index != 0)
 			strategy = parse_instruct(str, flag_index);
 	}
