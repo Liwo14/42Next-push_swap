@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 11:55:55 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 13:18:33 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static ssize_t	clean_string(char *clean_list, const char *list)
 		if (list[i] != ' ' && list[i + 1] == '-')
 			return (-1);
 		if ((list[i] == '-' && list[i + 1] == '\0') || (list[i] == '-' && list[i
-				+ 1] == ' ') || (list[i] == ' ' && list[i + 1] == ' ')
+					+ 1] == ' ') || (list[i] == ' ' && list[i + 1] == ' ')
 			|| (list[i] == ' ' && list[i + 1] == '\0'))
 			i++;
 		else
@@ -71,7 +71,7 @@ static void	ft_strcpy(char *dest, const char *src)
 
 	j = 0;
 	i = 0;
-	while (j != '\0')
+	while (dest[j] != '\0')
 		j++;
 	while ((src[i] != '\0'))
 	{
@@ -79,6 +79,8 @@ static void	ft_strcpy(char *dest, const char *src)
 		i++;
 		j++;
 	}
+	dest[j] = ' ';
+	j++;
 	dest[j] = '\0';
 }
 
@@ -91,7 +93,8 @@ static size_t	total_size(char **argv, size_t flag_index)
 
 	j = 1;
 	total_len = 0;
-	flag_len = ft_strlen(argv[flag_index]);
+	if (flag_index != 0)
+		flag_len = ft_strlen(argv[flag_index]);
 	while (argv[j])
 	{
 		i = 0;
@@ -101,8 +104,9 @@ static size_t	total_size(char **argv, size_t flag_index)
 			i++;
 		}
 		j++;
+		total_len++;
 	}
-	return (total_len - flag_len);
+	return (total_len - flag_len - 2);
 }
 
 char	*extract_str(char **argv)
@@ -118,10 +122,13 @@ char	*extract_str(char **argv)
 	flag_index = find_flag(argv);
 	total_len = total_size(argv, flag_index);
 	raw_str = malloc(sizeof(char) * total_len + 1);
-	while (argv[i])
+	raw_str[0] = '\0';
+	while (argv[i] != NULL)
 	{
-		if(i == flag_index)
+		if (i == flag_index)
 			i++;
+		if (argv[i] == NULL)
+			break ;
 		ft_strcpy(raw_str, argv[i]);
 		i++;
 	}

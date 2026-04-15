@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 11:46:35 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 13:17:56 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 ssize_t	find_flag(char **argv)
 {
 	ssize_t	checker;
-	ssize_t i;
-	ssize_t j;
-	
+	ssize_t	i;
+	ssize_t	j;
+
 	checker = 0;
 	i = 1;
 	j = 0;
 	{
-		while (argv[i])
+		while (argv[i] != NULL)
 		{
 			if ((argv[i][0] == '-') && (argv[i][1] == '-'))
 			{
@@ -78,17 +78,16 @@ ssize_t	check_flag(int argc, char **argv)
 	flag_index = -1;
 	strategy = 4;
 	if (argc == 2)
-		return(strategy);
+		return (strategy);
 	if (argc < 2)
 		return (debugg(4));
 	if (argc > 2)
 	{
 		flag_index = find_flag(argv);
-		if  (flag_index == -1)
+		if (flag_index == -1)
 			return (debugg(1));
 		if (flag_index != 0)
 			strategy = parse_instruct(argv, flag_index);
 	}
 	return (strategy);
 }
-
