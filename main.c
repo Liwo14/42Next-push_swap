@@ -6,15 +6,11 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 11:26:22 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 11:47:56 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static char	*extract_str(char **argv)
-{
-}
 
 static void	free_stack(t_stack **stack)
 {
@@ -46,6 +42,7 @@ int	main(int argc, char **argv)
 	if (strategy == -1)
 		return (1);
 	raw_str = extract_str(argv);
+	ft_printf("raw_str is : %s", raw_str);
 	init(raw_str, &stack_a, &stack_b);
 	if (strategy == 1)
 	{

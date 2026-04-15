@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 08:44:01 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 11:46:35 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ ssize_t	find_flag(char **argv)
 			}
 			i++;
 		}
-		if (checker != 1)
-			return (debugg(2));
+		if (checker > 1)
+			return (debugg(1));
 		return (j);
 	}
 }
@@ -85,8 +85,9 @@ ssize_t	check_flag(int argc, char **argv)
 	{
 		flag_index = find_flag(argv);
 		if  (flag_index == -1)
-			return (debugg(2));
-		strategy = parse_instruct(argv, flag_index);
+			return (debugg(1));
+		if (flag_index != 0)
+			strategy = parse_instruct(argv, flag_index);
 	}
 	return (strategy);
 }

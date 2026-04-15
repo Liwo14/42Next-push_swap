@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 07:15:57 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/15 08:00:13 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 11:36:34 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,11 @@ static void	free_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
+
 ssize_t ultra_simple_sort(t_stack	**stack_a) 
 {
 	write(1, "ra\n", 3);
-	free_stack(&stack_a);
+	free_stack(stack_a);
 	return (0);
 }
 
