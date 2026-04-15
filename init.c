@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 10:34:45 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 08:53:53 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,17 +67,16 @@ static void	init_list(t_stack **stack_a, t_stack **stack_b, char **list)
 	return ;
 }
 
-void	init(char **argv, ssize_t list_index, t_stack **stack_a,
-		t_stack **stack_b)
+void	init(char	*raw_str, t_stack **stack_a, t_stack **stack_b)
 {
+	char	*clean_str;
 	char	**list;
-	char	*str;
 	ssize_t	i;
 
 	i = 0;
-	str = clean_list(argv, list_index);
-	list = split(str, ' ');
-	free(str);
+	clean_str = clean_list(raw_str);
+	list = split(clean_str, ' ');
+	free(clean_str);
 	if (check_list(list) == -1)
 	{
 		while (list[i] != NULL)

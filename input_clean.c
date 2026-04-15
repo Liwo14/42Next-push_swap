@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 09:55:44 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 08:27:33 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,26 @@ static ssize_t	clean_string(char *clean_list, const char *list)
 	return (j);
 }
 
-char	*clean_list(char **argv, ssize_t list_index)
+char	*clean_list(char *raw_str)
 {
 	char	*tmp;
 	char	*clean_str;
 	ssize_t	len;
 
-	len = ft_strlen(argv[list_index]);
+	len = ft_strlen(raw_str);
 	tmp = malloc(sizeof(char) * len + 1);
 	tmp[len] = '\0';
-	len = clean_string(tmp, argv[list_index]);
+	len = clean_string(tmp, raw_str);
 	if (len == -1)
 	{
 		free(tmp);
+		free(raw_str);
 		debugg(5);
 		exit(1);
 	}
 	clean_str = malloc(sizeof(char) * len + 1);
 	clean_string(clean_str, tmp);
 	free(tmp);
+	free(raw_str);
 	return (clean_str);
 }

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 10:40:28 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 08:44:24 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,7 @@ int	ft_putchar(char c)
 	else if (nb == 1)
 		ft_printf("error : instruct is invalid.\n");
 	else if (nb == 2)
-		ft_printf("error : two args, but not exactly one instruct.\n");
-	else if (nb == 3)
-		ft_printf("error : arg count wrong.\n");
+		ft_printf("error : not exactly one instruct.\n");
 	else if (nb == 4)
 		ft_printf("error : empty input.\n");
 	else if (nb == 5)

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 08:35:17 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 08:45:22 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,11 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
-void				init(char **argv, ssize_t list_index, t_stack **stack_a,
-						t_stack **stack_b);
+void				init(char	*str, t_stack **stack_a, t_stack **stack_b);
 void				push_swap(t_stack **stack_a, ssize_t strategy);
 void				fill_index(t_stack *stack, size_t list_size);
 void				add_bottom(t_stack **stack, t_stack *new);
 void				push(t_stack **dest, t_stack **src);
-
 void				pa(t_stack **a, t_stack **b);
 void				pb(t_stack **a, t_stack **b);
 void				rrr(t_stack **a, t_stack **b);
@@ -50,13 +48,11 @@ void				sa(t_stack **a);
 void				sb(t_stack **b);
 void				rb(t_stack **b);
 
-ssize_t				check_input(int argc, char **argv, ssize_t list_index);
 ssize_t				ft_strcmp(const char *s1, const char *s2);
+ssize_t				check_flag(int argc, char **argv);
 ssize_t				ft_atoi(const char *str);
+ssize_t				find_flag(char **argv);
 ssize_t				debugg(ssize_t nb);
-
-char				*clean_list(char **argv, ssize_t list_index);
-char				**split(char *str, char c);
 
 int					ft_printf_parse(char arg_type, va_list args);
 int					direction(t_stack *tmp, int val, int max);
@@ -74,5 +70,8 @@ t_stack				*simple_sort(t_stack *head);
 t_stack				*new_stack(size_t value);
 
 size_t				ft_strlen(char const *str);
+
+char				*clean_list(char *raw_str);
+char				**split(char *str, char c);
 
 #endif

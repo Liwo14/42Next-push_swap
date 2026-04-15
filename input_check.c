@@ -6,27 +6,46 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 09:11:12 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 08:44:01 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static ssize_t	parse_instruct(char **argv, ssize_t list_index)
+ssize_t	find_flag(char **argv)
 {
-	size_t	instruct_index;
+	ssize_t	checker;
+	ssize_t i;
+	ssize_t j;
+	
+	checker = 0;
+	i = 1;
+	j = 0;
+	{
+		while (argv[i])
+		{
+			if ((argv[i][0] == '-') && (argv[i][1] == '-'))
+			{
+				checker++;
+				j = i;
+			}
+			i++;
+		}
+		if (checker != 1)
+			return (debugg(2));
+		return (j);
+	}
+}
 
-	if (list_index == 1)
-		instruct_index = 2;
-	else if (list_index == 2)
-		instruct_index = 1;
-	if (ft_strcmp(argv[instruct_index], "--simple") == 1)
+static ssize_t	parse_instruct(char **argv, ssize_t flag_index)
+{
+	if (ft_strcmp(argv[flag_index], "--simple") == 1)
 		return (1);
-	else if (ft_strcmp(argv[instruct_index], "--medium") == 1)
+	else if (ft_strcmp(argv[flag_index], "--medium") == 1)
 		return (2);
-	else if (ft_strcmp(argv[instruct_index], "--complex") == 1)
+	else if (ft_strcmp(argv[flag_index], "--complex") == 1)
 		return (3);
-	else if (ft_strcmp(argv[instruct_index], "--adaptive") == 1)
+	else if (ft_strcmp(argv[flag_index], "--adaptive") == 1)
 		return (4);
 	else
 		return (debugg(1));
@@ -51,24 +70,24 @@ static ssize_t	char_check(char **argv, ssize_t list_index)
 	return (0);
 }
 
-ssize_t	check_input(int argc, char **argv, ssize_t list_index)
+ssize_t	check_flag(int argc, char **argv)
 {
-	ssize_t	checker;
+	ssize_t	flag_index;
 	ssize_t	strategy;
 
+	flag_index = -1;
 	strategy = 4;
-	checker = 0;
-	if (argc == 3)
+	if (argc == 2)
+		return(strategy);
+	if (argc < 2)
+		return (debugg(4));
+	if (argc > 2)
 	{
-		if ((argv[1][0] == '-') && (argv[1][1] == '-'))
-			checker++;
-		if ((argv[2][0] == '-') && (argv[2][1] == '-'))
-			checker++;
-		if (checker != 1)
+		flag_index = find_flag(argv);
+		if  (flag_index == -1)
 			return (debugg(2));
-		strategy = parse_instruct(argv, list_index);
+		strategy = parse_instruct(argv, flag_index);
 	}
-	if (char_check(argv, list_index) == -1)
-		return (debugg(0));
 	return (strategy);
 }
+
