@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 08:27:33 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 11:26:17 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static ssize_t	clean_string(char *clean_list, const char *list)
 		if (list[i] != ' ' && list[i + 1] == '-')
 			return (-1);
 		if ((list[i] == '-' && list[i + 1] == '\0') || (list[i] == '-' && list[i
-					+ 1] == ' ') || (list[i] == ' ' && list[i + 1] == ' ')
+				+ 1] == ' ') || (list[i] == ' ' && list[i + 1] == ' ')
 			|| (list[i] == ' ' && list[i + 1] == '\0'))
 			i++;
 		else
@@ -62,4 +62,66 @@ char	*clean_list(char *raw_str)
 	free(tmp);
 	free(raw_str);
 	return (clean_str);
+}
+
+static void	ft_strcpy(char *dest, const char *src)
+{
+	size_t	i;
+	size_t	j;
+
+	j = 0;
+	i = 0;
+	while (j != '\0')
+		j++;
+	while ((src[i] != '\0'))
+	{
+		dest[j] = src[i];
+		i++;
+		j++;
+	}
+	dest[j] = '\0';
+}
+
+static size_t	total_size(char **argv, size_t flag_index)
+{
+	size_t	i;
+	size_t	j;
+	size_t	total_len;
+	size_t	flag_len;
+
+	j = 1;
+	total_len = 0;
+	flag_len = ft_strlen(argv[flag_index]);
+	while (argv[j])
+	{
+		i = 0;
+		while (argv[j][i])
+		{
+			total_len++;
+			i++;
+		}
+		j++;
+	}
+	return (total_len - flag_len);
+}
+
+char	*extract_str(char **argv)
+{
+	size_t	flag_index;
+	size_t	i;
+	size_t	j;
+	size_t	total_len;
+	char	*raw_str;
+
+	i = 1;
+	j = 0;
+	flag_index = find_flag(argv);
+	total_len = total_size(argv, flag_index);
+	raw_str = malloc(sizeof(char) * total_len + 1);
+	while (argv[i])
+	{
+		ft_strcpy(raw_str, argv[i]);
+		i++;
+	}
+	return (raw_str);
 }

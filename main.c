@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 08:39:37 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 11:26:22 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static char	*extract_str(char **argv)
 {
-	
 }
 
 static void	free_stack(t_stack **stack)
@@ -52,7 +51,7 @@ int	main(int argc, char **argv)
 	{
 		if (stack_a->prev->prev == stack_a
 			&& stack_a->value > stack_a->next->value)
-			return(ultra_simple_sort(&stack_a));
+			return (ultra_simple_sort(&stack_a));
 	}
 	push_swap(&stack_a, strategy);
 	free_stack(&stack_a);
