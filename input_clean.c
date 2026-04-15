@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 11:49:41 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 11:55:55 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,8 @@ char	*extract_str(char **argv)
 	raw_str = malloc(sizeof(char) * total_len + 1);
 	while (argv[i])
 	{
+		if(i == flag_index)
+			i++;
 		ft_strcpy(raw_str, argv[i]);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 11:47:56 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/15 11:54:12 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 	if (strategy == -1)
 		return (1);
 	raw_str = extract_str(argv);
-	ft_printf("raw_str is : %s", raw_str);
+	ft_printf("raw_str is : %s\n", raw_str);
 	init(raw_str, &stack_a, &stack_b);
 	if (strategy == 1)
 	{
