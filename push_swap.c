@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 07:34:00 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 14:08:01 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 07:18:05 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,13 @@ static int	disorder_level(t_stack *head)
 
 void	push_swap(t_stack **stack_a, ssize_t strategy)
 {
+	int test;
+	
+	test = is_sorted(*stack_a);
+	ft_printf("test = %d\n", test);
 	if (strategy == 4)
 		strategy = disorder_level(*stack_a);
+	ft_printf("strat is = %d\n",strategy);
 	if (is_sorted(*stack_a) != 1)
 	{
 		if (strategy == 1)

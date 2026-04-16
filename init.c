@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 08:53:53 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 07:03:29 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,10 @@ static void	init_list(t_stack **stack_a, t_stack **stack_b, char **list)
 	list_size = 0;
 	while (list[list_size])
 	{
+		ft_printf("list[%d] %s\n", list_size, list[list_size]);
 		list_size++;
 	}
+	ft_printf("list[%d] %s\n", list_size, list[list_size]);
 	*stack_a = fill_value(list, list_size);
 	*stack_b = NULL;
 	fill_index(*stack_a, list_size);
