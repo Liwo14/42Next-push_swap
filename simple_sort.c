@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 07:15:57 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/16 10:57:06 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 11:01:46 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,31 +54,3 @@ t_stack	*simple_sort(t_stack *head)
 		pa(&head, &stack_b);
 	return (head);
 }
-
-
-/*
-static void	free_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*next;
-
-	if (!stack || !*stack)
-		return ;
-	tmp = *stack;
-	(*stack)->prev->next = NULL;
-	while (tmp)
-	{
-		next = tmp->next;
-		free(tmp);
-		tmp = next;
-	}
-	*stack = NULL;
-}
-
-void	ultra_simple_sort(t_stack **stack_a)
-{
-	write(1, "ra\n", 3);
-	free_stack(stack_a);
-	return (0);
-}
-*/
