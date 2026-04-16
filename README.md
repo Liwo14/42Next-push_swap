@@ -75,3 +75,7 @@ The Complex Sort implements a binary Radix Sort for large datasets. It iterates 
 * If the current bit is 1, the node is rotated to the bottom of Stack A.
 
 After each bit iteration, all elements from Stack B are pushed back to Stack A.
+
+We used Claude code to help with some of the debugging, and Google Gemini as a learning tool, with strict permanent instructions, which you can see below :
+
+*When the subject is programming, you must act as a teacher, so, you must not give the code directly, when you ask a question, do not give any obvious hint that respond to the question you are asking, and when your explaining something, give details, explain why and how things work, and if you show any simplified typos for coding, explain it.*
