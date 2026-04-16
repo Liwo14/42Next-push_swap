@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 11:33:51 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 13:17:20 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,22 +83,23 @@ int	ft_putchar(char c)
 	return (1);
 }
 /*
-if (nb == 0)
-	ft_printf("error : arg in list is not a number.\n");
-else if (nb == 1)
-	ft_printf("error : instruct is invalid.\n");
-else if (nb == 2)
-	ft_printf("error : not exactly one instruct.\n");
-else if (nb == 4)
-	ft_printf("error : empty input.\n");
-else if (nb == 5)
-	ft_printf("error : no space before '-'.\n");
-else if (nb == 6)
-	ft_printf("error : same number found twice in the list\n");
-else if (nb == 7)
-	ft_printf("error : number out of range\n");
-else if (nb == 8)
-	ft_printf("error, not sorted\n");
-else if (nb == 9)
-	ft_printf("error : \n");
-*/
+ssize_t	debugg(ssize_t nb)
+{
+	if (nb == 0)
+		ft_printf("error : arg in list is not a number.\n");
+	else if (nb == 1)
+		ft_printf("error : instruct is invalid.\n");
+	else if (nb == 2)
+		ft_printf("error : not exactly one instruct.\n");
+	else if (nb == 4)
+		ft_printf("error : empty input.\n");
+	else if (nb == 5)
+		ft_printf("error : no space before '-'.\n");
+	else if (nb == 6)
+		ft_printf("error : same number found twice in the list\n");
+	else if (nb == 7)
+		ft_printf("error : number out of range\n");
+	else if (nb == 8)
+		ft_printf("error : not sorted\n");
+	return (-1);
+}*/

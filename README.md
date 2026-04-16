@@ -1,14 +1,18 @@
-# *This project has been created as part of the 42 curriculum by ccolnat and arde-ass*
+# *This project has been created as part of the 42 curriculum by ccolnat, arde-ass*
+
 
 ## DESCRIPTION
 Push_swap is the 1st group project project of the 42 curriculum.
-The objective is to create a program which take as input a serie of numbres within Int range, and an optional flag (see more in instruction category).
+The objective is to create a program which take as input a serie of numbres within int range, and an optional flag, see more bellow.
 
-The program then sorts the numbers by swaping them between two piles, A and B, and there is a resticted list of movements allowed within and between piles.
+The program then sorts the numbers by swaping them between two piles, A and B, and there is a resticted list of movements allowed within and between piles (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr), see details in Ressources.
+
+If no flag is provided, the programm will measure the disorder and the lengh of the list given, and choose betwin 3 differents algorythms to minimise the numbers of operation required to sort the array, algorythms are detailed in Ressources.
 
 The proggram also handle errors, returning "Error" and freeing memory.
 
-This GNL does not handle the bonus part of the subject.
+This push_swap does not handle the bonus part of the subject.
+
 
 ## INSTRUCTIONS
 To compile this project, you must run the command "Make"
@@ -31,7 +35,11 @@ norminette
 And valgrind to check for leaks :
 valgrind ./push_swap 3 2 1
 
-Testers are available online, even if most won't allow for the flags.
+Testers are available online, even if most won't allow for testing with the flags.
+
+Also, commented in the utils.c file, you can find a different version of the debugg() function, which will give you detailed errors message.
+
+
 ## Ressources
 This push_swap follow the new subject of 42_next cursus, version 1.1.
 
