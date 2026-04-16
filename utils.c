@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 10:39:42 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 10:42:29 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ssize_t	ft_strcmp(const char *s1, const char *s2)
 
 	i = 0;
 	if ((s1[0] == '\0') || (s2[0] == '\0'))
-		return (debugg(10));
+		return (-1);
 	while ((s1[i] != '\0') || (s2[i] != '\0'))
 	{
 		if (s1[i] == s2[i])
@@ -29,7 +29,7 @@ ssize_t	ft_strcmp(const char *s1, const char *s2)
 	if ((s1[i] == '\0') && (s2[i] == '\0'))
 		return (1);
 	else
-		return (debugg(10));
+		return (-1);
 }
 
 ssize_t	debugg(ssize_t nb)
@@ -50,8 +50,6 @@ ssize_t	debugg(ssize_t nb)
 		ft_printf("error : number out of range\n");
 	else if (nb == 8)
 		ft_printf("error, not sorted\n");
-	else if (nb == 9)
-		ft_printf("error : \n");
 	if (nb >= 10)
 		ft_printf("Error\n");
 	return (-1);
