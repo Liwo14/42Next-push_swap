@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 14:07:28 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 04:50:35 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-int	main(int argc, char **argv)
+int	main(size_t argc, char **argv)
 {
 	ssize_t	strategy;
 	t_stack	*stack_a;
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	strategy = check_flag(argc, argv);
 	if (strategy == -1)
 		return (1);
-	raw_str = extract_str(argv);
+	raw_str = extract_str(argc, argv, );
 	if (char_check(raw_str) == -1)
 	{
 		free(raw_str);

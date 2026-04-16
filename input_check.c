@@ -6,13 +6,40 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/15 14:04:14 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 04:53:20 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-ssize_t	find_flag(char **str)
+static ssize_t	find_nb_flags(char **argv)
+{
+	ssize_t	checker;
+	ssize_t	i;
+	ssize_t	j;
+
+	checker = 0;
+	i = 1;
+	j = 0;
+	while (argv[i] != NULL)
+	{
+		while (argv[i][j] !='\0')
+		{
+			if (argv[i][j + 1] == '\0')
+				break;
+			if ((argv[i][j] == '-') && (argv[i][j + 1] == '-'))
+				checker++;
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	if (checker > 1)
+		return (debugg(1));
+	return (checker)
+}
+
+ssize_t	find_flag(char **argv)
 {
 	ssize_t	checker;
 	ssize_t	i;
@@ -22,9 +49,9 @@ ssize_t	find_flag(char **str)
 	i = 1;
 	j = 0;
 	{
-		while (str[i] != NULL)
+		while (argv[i] != NULL)
 		{
-			if ((str[i][0] == '-') && (str[i][1] == '-'))
+			if ((argv[i][0] == '-') && (argv[i][1] == '-'))
 			{
 				checker++;
 				j = i;
@@ -37,32 +64,32 @@ ssize_t	find_flag(char **str)
 	}
 }
 
-static ssize_t	parse_instruct(char **str, ssize_t flag_index)
+static ssize_t	parse_instruct(char **argv, ssize_t flag_index)
 {
-	if (ft_strcmp(str[flag_index], "--simple") == 1)
+	if (ft_strcmp(argv[flag_index], "--simple") == 1)
 		return (1);
-	else if (ft_strcmp(str[flag_index], "--medium") == 1)
+	else if (ft_strcmp(argv[flag_index], "--medium") == 1)
 		return (2);
-	else if (ft_strcmp(str[flag_index], "--complex") == 1)
+	else if (ft_strcmp(argv[flag_index], "--complex") == 1)
 		return (3);
-	else if (ft_strcmp(str[flag_index], "--adaptive") == 1)
+	else if (ft_strcmp(argv[flag_index], "--adaptive") == 1)
 		return (4);
 	else
 		return (debugg(1));
 }
 
-ssize_t	char_check(char *str)
+ssize_t	char_check(char *argv)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (argv[i] != '\0')
 	{
-		if (str[i] == '-')
+		if (argv[i] == '-')
 			i++;
-		else if (str[i] == ' ')
+		else if (argv[i] == ' ')
 			i++;
-		else if ((str[i] < '0') || (str[i] > '9'))
+		else if ((argv[i] < '0') || (argv[i] > '9'))
 			return (debugg(0));
 		else
 			i++;
@@ -70,7 +97,7 @@ ssize_t	char_check(char *str)
 	return (0);
 }
 
-ssize_t	check_flag(int argc, char **str)
+ssize_t	check_flag(int argc, char **argv)
 {
 	ssize_t	flag_index;
 	ssize_t	strategy;
@@ -83,11 +110,12 @@ ssize_t	check_flag(int argc, char **str)
 		return (debugg(4));
 	if (argc > 2)
 	{
-		flag_index = find_flag(str);
+		flag_index = find_nb_flag(argv);
 		if (flag_index == -1)
 			return (-1);
 		if (flag_index != 0)
-			strategy = parse_instruct(str, flag_index);
+			strategy = parse_instruct(argv, flag_index);
 	}
 	return (strategy);
 }
+
