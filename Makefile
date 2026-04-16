@@ -22,19 +22,19 @@ SRCS        =    main.c \
                 ft_printf.c \
                 ft_printf_utils.c
 
-OBJS        =    $(SRCS:.c=.o)
+OBJS	=	$(SRCS:.c=.o)
 
-all:        $(NAME)
+all:	$(NAME)
 
-$(NAME):    $(OBJS)
-            $(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME):	$(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-            rm -f $(OBJS)
+	rm -f $(OBJS)
 
 fclean:        clean
-            rm -f $(NAME)
+	rm -f $(NAME)
 
-re:            fclean all
+re:	fclean all
 
-.PHONY:        all clean fclean re
+.PHONY:	all clean fclean re
