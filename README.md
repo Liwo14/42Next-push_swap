@@ -12,6 +12,8 @@ The program also handles errors, returning "Error" and freeing memory.
 
 This push_swap implementation does not handle the bonus part of the subject.
 
+ccolnat wrote all the input-related code up to the initialization of the linked list, which connected our functions and was therefore coded together. arde-ass implemented the majority of the algorithms (see headers).
+
 ## INSTRUCTIONS
 To compile this project, you must run the command `make`.
 
