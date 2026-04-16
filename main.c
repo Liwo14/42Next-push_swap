@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 09:41:15 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 09:45:20 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-int	main(size_t argc, char **argv)
+int	main(int argc, char **argv)
 {
 	ssize_t	strategy;
 	t_stack	*stack_a;

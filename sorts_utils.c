@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 09:13:25 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/16 07:17:06 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 10:01:21 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ t_stack	*get_max_node(t_stack *head)
 	return (max_node);
 }
 
-int	get_stack_size(t_stack *head)
+ssize_t	get_stack_size(t_stack *head)
 {
 	t_stack	*tmp;
-	int		i;
+	ssize_t	i;
 
 	if (!head)
 		return (0);
@@ -65,11 +65,11 @@ int	get_stack_size(t_stack *head)
 	return (i);
 }
 
-int	direction(t_stack *tmp, int val, int max)
+ssize_t	direction(t_stack *tmp, ssize_t val, ssize_t max)
 {
 	while (max > 0)
 	{
-		if (tmp->index == (size_t)val)
+		if (tmp->index == (ssize_t)val)
 			return (1);
 		max--;
 		tmp = tmp->next;
@@ -77,7 +77,7 @@ int	direction(t_stack *tmp, int val, int max)
 	return (0);
 }
 
-int	is_sorted(t_stack *head)
+ssize_t	is_sorted(t_stack *head)
 {
 	t_stack	*tmp;
 

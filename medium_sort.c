@@ -6,15 +6,15 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 13:48:57 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/13 09:05:25 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 10:01:10 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_sqrt(int number)
+static ssize_t	ft_sqrt(ssize_t number)
 {
-	int	i;
+	ssize_t	i;
 
 	if (number < 0)
 		return (0);
@@ -24,10 +24,10 @@ static int	ft_sqrt(int number)
 	return (i - 1);
 }
 
-static void	push_chunks_to_b(t_stack **a, t_stack **b, size_t size)
+static void	push_chunks_to_b(t_stack **a, t_stack **b, ssize_t size)
 {
-	size_t	chunk;
-	size_t	i;
+	ssize_t	chunk;
+	ssize_t	i;
 
 	chunk = ft_sqrt(size) + (size / 100);
 	i = 0;
@@ -55,7 +55,7 @@ t_stack	*medium_sort(t_stack *head)
 {
 	t_stack	*stack_b;
 	t_stack	*max_node;
-	int		size;
+	ssize_t	size;
 
 	stack_b = NULL;
 	size = get_stack_size(head);

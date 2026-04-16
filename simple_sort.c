@@ -6,11 +6,12 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 07:15:57 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/16 06:53:04 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 10:01:14 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 /*
 static void	free_stack(t_stack **stack)
 {
@@ -66,10 +67,10 @@ t_stack	*simple_sort(t_stack *head)
 	while (size > 3)
 	{
 		if (direction(head, target_idx, size / 2))
-			while (head->index != (size_t)target_idx)
+			while (head->index != (ssize_t)target_idx)
 				ra(&head);
 		else
-			while (head->index != (size_t)target_idx)
+			while (head->index != (ssize_t)target_idx)
 				rra(&head);
 		pb(&head, &stack_b);
 		target_idx++;

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 04:38:01 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/10 08:52:07 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 09:56:02 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	swap(t_stack **head)
 {
-	int	tmp_val;
-	int	tmp_idx;
+	ssize_t	tmp_val;
+	ssize_t	tmp_idx;
 
 	if (!head || !*head || (*head)->next == *head)
 		return ;

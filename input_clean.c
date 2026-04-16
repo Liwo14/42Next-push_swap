@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 09:40:59 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 09:47:44 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ static size_t	total_size(char **argv)
 	return (total_len);
 }
 
-char	*extract_str(size_t argc, char **argv)
+char	*extract_str(int argc, char **argv)
 {
 	size_t	flag_index;
 	size_t	i;

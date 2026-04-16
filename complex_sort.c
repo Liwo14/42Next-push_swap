@@ -6,16 +6,16 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 17:12:48 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/13 09:05:39 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 10:01:01 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_max_bits(t_stack *head)
+static ssize_t	get_max_bits(t_stack *head)
 {
-	int	max_idx;
-	int	max_bits;
+	ssize_t	max_idx;
+	ssize_t	max_bits;
 
 	max_idx = get_stack_size(head) - 1;
 	max_bits = 0;
@@ -26,9 +26,9 @@ static int	get_max_bits(t_stack *head)
 	return (max_bits);
 }
 
-static void	process_bit(t_stack **head, t_stack **b, int s, int bit)
+static void	process_bit(t_stack **head, t_stack **b, ssize_t s, ssize_t bit)
 {
-	int	j;
+	ssize_t	j;
 
 	j = 0;
 	while (j < s)
@@ -44,9 +44,9 @@ static void	process_bit(t_stack **head, t_stack **b, int s, int bit)
 t_stack	*complex_sort(t_stack *head)
 {
 	t_stack	*stack_b;
-	int		size;
-	int		max_bits;
-	int		i;
+	ssize_t	size;
+	ssize_t	max_bits;
+	ssize_t	i;
 
 	stack_b = NULL;
 	size = get_stack_size(head);

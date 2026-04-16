@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 09:40:22 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 09:46:41 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ static ssize_t	find_nb_flag(char **argv)
 
 ssize_t	find_flag(char **argv)
 {
-	ssize_t	checker;
 	ssize_t	i;
 
-	checker = 0;
 	i = 1;
 	{
 		while (argv[i] != NULL)
@@ -81,7 +79,7 @@ ssize_t	char_check(char *argv)
 	return (0);
 }
 
-ssize_t	check_flags(size_t argc, char **argv)
+ssize_t	check_flags(int argc, char **argv)
 {
 	ssize_t	flag_index;
 	ssize_t	strategy;
@@ -100,4 +98,5 @@ ssize_t	check_flags(size_t argc, char **argv)
 		flag_index = find_flag(argv);
 		return (parse_instruct(argv, flag_index));
 	}
+	return (-1);
 }

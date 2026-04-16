@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 09:37:05 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 10:00:50 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,18 @@ void				sa(t_stack **a);
 void				sb(t_stack **b);
 void				rb(t_stack **b);
 
+ssize_t				direction(t_stack *tmp, ssize_t val, ssize_t max);
 ssize_t				ft_strcmp(const char *s1, const char *s2);
-ssize_t				ultra_simple_sort(t_stack **stack_a);
-ssize_t				check_flags(size_t argc, char **argv);
+ssize_t				check_flags(int argc, char **argv);
+ssize_t				get_stack_size(t_stack *head);
+ssize_t				is_sorted(t_stack *head);
 ssize_t				ft_atoi(const char *str);
 ssize_t				find_flag(char **argv);
 ssize_t				char_check(char *str);
 ssize_t				debugg(ssize_t nb);
 
 int					ft_printf_parse(char arg_type, va_list args);
-int					direction(t_stack *tmp, int val, int max);
 int					ft_printf(const char *input, ...);
-int					get_stack_size(t_stack *head);
-int					is_sorted(t_stack *head);
 int					ft_putchar(char c);
 
 t_stack				*fill_value(char **list, size_t list_size);
@@ -75,6 +74,8 @@ size_t				ft_strlen(char const *str);
 
 char				**split(char *str, char c);
 char				*clean_list(char *raw_str);
-char				*extract_str(size_t argc, char **argv);
+char				*extract_str(int argc, char **argv);
 
 #endif
+
+//ssize_t				ultra_simple_sort(t_stack **stack_a);
