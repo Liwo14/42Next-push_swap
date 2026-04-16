@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 04:28:42 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 06:38:02 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void				rb(t_stack **b);
 
 ssize_t				ft_strcmp(const char *s1, const char *s2);
 ssize_t				ultra_simple_sort(t_stack **stack_a);
-ssize_t				check_flag(size_t argc, char **argv);
+ssize_t				check_flags(size_t argc, char **argv);
 ssize_t				ft_atoi(const char *str);
 ssize_t				find_flag(char **argv);
 ssize_t				char_check(char *str);

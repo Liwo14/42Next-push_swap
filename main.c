@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 04:50:35 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 06:46:38 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int	main(size_t argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	*raw_str;
-
-	strategy = check_flag(argc, argv);
+	strategy = check_flags(argc, argv);
 	if (strategy == -1)
 		return (1);
-	raw_str = extract_str(argc, argv, );
+	ft_printf("strat is = %d\n",strategy);
+	raw_str = extract_str(argc, argv);
 	if (char_check(raw_str) == -1)
 	{
 		free(raw_str);
