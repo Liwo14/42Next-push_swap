@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 06:54:43 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 09:41:15 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(size_t argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	*raw_str;
+
 	strategy = check_flags(argc, argv);
 	if (strategy == -1)
 		return (1);

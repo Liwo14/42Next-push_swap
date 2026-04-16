@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 06:38:02 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 09:37:05 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef struct s_stack
 {
-	size_t			value;
-	size_t			index;
+	ssize_t			value;
+	ssize_t			index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }					t_stack;

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 06:48:46 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/16 09:40:22 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static ssize_t	find_nb_flag(char **argv)
 				checker++;
 			i++;
 		}
-		return(checker);
+		return (checker);
 	}
 }
 
@@ -100,6 +100,4 @@ ssize_t	check_flags(size_t argc, char **argv)
 		flag_index = find_flag(argv);
 		return (parse_instruct(argv, flag_index));
 	}
-
 }
-
