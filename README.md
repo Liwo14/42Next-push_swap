@@ -17,10 +17,10 @@ ccolnat wrote all the input-related code up to the initialization of the linked 
 ## INSTRUCTIONS
 To compile this project, you must run the command `make`.
 
-# INPUTS
+###### INPUTS
 our program allows for some flexibility: it tolerates and corrects multiple spaces, and/or stray "-" characters between spaces.
 
-# FLAGS
+###### FLAGS
 Using one of 4 flags below will change the sorting behavior (Only one at a time): 
 `--simple` / `--medium` / `--complex` / `--adaptive`
 Additionally, you can activate the benchmark mode with :
