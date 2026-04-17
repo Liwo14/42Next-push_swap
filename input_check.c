@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 07:09:31 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 07:28:46 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ static ssize_t	find_nb_flag(char **argv, ssize_t	bench)
 				checker++;
 				i++;
 			}
+			else
+				i++;
 		}
+		
 		return (checker);
 	}
 }
@@ -49,6 +52,8 @@ ssize_t	find_flag(char **argv, ssize_t bench)
 				return (i);
 				i++;
 			}
+			else
+				i++;
 		}
 		return (0);
 	}

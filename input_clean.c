@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 07:07:41 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 07:29:12 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,11 +121,9 @@ char	*extract_str(int argc, char **argv, ssize_t	bench)
 	raw_str[total_len + argc] = '\0';
 	while (argv[i] != NULL)
 	{
-		if (i == flag_index)
+		if ((i == flag_index) || (i == bench))
 			i++;
-		else if (i == bench)
-			i++;
-		else if (argv[i] != NULL)
+		else
 		{
 			ft_strcpy(raw_str, argv[i]);
 			i++;

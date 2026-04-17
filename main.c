@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 07:11:13 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 07:33:35 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static	ssize_t is_bench(char	**argv)
 	ssize_t	checker;
 
 	i = 1;
+	checker = 0;
 	{
 		while (argv[i] != NULL)
 		{
@@ -79,9 +80,10 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	if (bench == 0)
-		ft_printf("Bench off");
+		ft_printf("Bench off\n");
 	if (bench > 0)
-		ft_printf("Bench on");
+		ft_printf("Bench on\n");
+	ft_printf("Strategy = %d\n", strategy);
 	init(raw_str, &stack_a, &stack_b);
 	push_swap(&stack_a, strategy);
 	free_stack(&stack_a);
