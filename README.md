@@ -80,10 +80,10 @@ Here is the detailed list of movements allowed:
 
 The structure we use for manipulating the nodes contains 4 components:
 
-###### The next node**: As it is a linked list, it contains the next node's address.
-###### The prev node**: In our implementation, every node contains a pointer to the next AND the previous node (a doubly linked list).
-###### The index**: Another specificity is that our program defines every node's final position beforehand. This is especially useful in the complex algorithm (Radix sort), where negative values are harder to handle.
-###### The value**: Finally, the actual value or content of the node.
+* **The next node**: As it is a linked list, it contains the next node's address.
+* **The prev node**: In our implementation, every node contains a pointer to the next AND the previous node (a doubly linked list).
+* **The index**: Another specificity is that our program defines every node's final position beforehand. This is especially useful in the complex algorithm (Radix sort), where negative values are harder to handle.
+* **The value**: Finally, the actual value or content of the node.
 
 1. Simple Sort (Small Sets)
 The Simple Sort is used for stacks with 5 or fewer elements. It identifies the smallest index and pushes it to Stack B until only 3 elements remain in Stack A.
