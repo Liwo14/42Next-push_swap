@@ -6,7 +6,7 @@
 #    By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#              #
-#    Updated: 2026/04/17 09:48:37 by ccolnat          ###   ########.fr        #
+#    Updated: 2026/04/17 16:03:30 by ccolnat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS    =   main.c \
             ft_printf.c \
             ft_printf_utils.c \
             count.c \
+            print_moves.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
