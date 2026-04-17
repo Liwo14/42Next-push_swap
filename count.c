@@ -6,116 +6,128 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 09:13:02 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/17 09:51:32 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 14:52:36 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-ssize_t  count_p(char flag, ssize_t instruct)
+static ssize_t  count_r(ssize_t instruct, ssize_t mode)
 {
-    static ssize_t  a;
-    static ssize_t  b;
-    static ssize_t  s;
+    static ssize_t  ra;
+    static ssize_t  rb;
+    static ssize_t  rr;
     
-    if (instruct == 0)
+    if (mode == 0)
     {
-        if (flag == 'a')
-            a++;
-        if (flag == 'b')
-            b++;
+        if (instruct == 6)
+            ra++;
+        if (instruct == 7)
+            rb++;
+        if (instruct == 8)
+            rr++;
         return (0);
     }
-    if (instruct == 1)
+    if (mode == 1)
     {
-        if (flag == 'a')
-            return (a);
-        if (flag == 'b')
-            return (b);
+        if (instruct == 6)
+            return (ra);
+        if (instruct == 7)
+            return (rb);
+        if (instruct == 8)
+            return (rr);
     }
     return (0);
 }
 
-ssize_t  count_r(char flag, ssize_t instruct)
+static ssize_t  count_rr(ssize_t instruct, ssize_t mode)
 {
-    static ssize_t  a;
-    static ssize_t  b;
-    static ssize_t  r;
+    static ssize_t  rra;
+    static ssize_t  rrb;
+    static ssize_t  rrr;
     
-    if (instruct == 0)
+    if (mode == 0)
     {
-        if (flag == 'a')
-            a++;
-        if (flag == 'b')
-            b++;
-        if (flag == 'r')
-            r++;
+        if (instruct == 9)
+            rra++;
+        if (instruct == 10)
+            rrb++;
+        if (instruct == 11)
+            rrr++;
         return (0);
     }
-    if (instruct == 1)
+    if (mode == 1)
     {
-        if (flag == 'a')
-            return (a);
-        if (flag == 'b')
-            return (b);
-        if (flag == 'r')
-            return (r);
+        if (instruct == 9)
+            return (rra);
+        if (instruct == 10)
+            return (rrb);
+        if (instruct == 11)
+            return (rrr);
     }
     return (0);
 }
 
-ssize_t  count_rr(char flag, ssize_t instruct)
+static ssize_t  count_s(ssize_t instruct, ssize_t mode)
 {
-    static ssize_t  a;
-    static ssize_t  b;
-    static ssize_t  r;
+    static ssize_t  sa;
+    static ssize_t  sb;
+    static ssize_t  ss;
     
-    if (instruct == 0)
+    if (mode == 0)
     {
-        if (flag == 'a')
-            a++;
-        if (flag == 'b')
-            b++;
-        if (flag == 'r')
-            r++;
+        if (instruct == 1)
+            sa++;
+        if (instruct == 2)
+            sb++;
+        if (instruct == 3)
+            ss++;
         return (0);
     }
-    if (instruct == 1)
+    if (mode == 1)
     {
-        if (flag == 'a')
-            return (a);
-        if (flag == 'b')
-            return (b);
-        if (flag == 'r')
-            return (r);
+        if (instruct == 1)
+            return (sa);
+        if (instruct == 2)
+            return (sb);
+        if (instruct == 3)
+            return (ss);
     }
     return (0);
 }
 
-ssize_t  count_s(char flag, ssize_t instruct)
+static ssize_t  count_p(ssize_t instruct, ssize_t mode)
 {
-    static ssize_t  a;
-    static ssize_t  b;
-    static ssize_t  s;
+    static ssize_t  pa;
+    static ssize_t  pb;
     
-    if (instruct == 0)
+    if (mode == 0)
     {
-        if (flag == 'a')
-            a++;
-        if (flag == 'b')
-            b++;
-        if (flag == 's')
-            s++;
+        if (instruct == 4)
+            pa++;
+        if (instruct == 5)
+            pb++;
         return (0);
     }
-    if (instruct == 1)
+    if (mode == 1)
     {
-        if (flag == 'a')
-            return (a);
-        if (flag == 'b')
-            return (b);
-        if (flag == 's')
-            return (s);
+        if (instruct == 5)
+            return (pa);
+        if (instruct == 4)
+            return (pb);
     }
     return (0);
 }
+
+void    parse_count(ssize_t instruct, ssize_t mode)
+{
+    if ((instruct >= 6) || (instruct <= 8))
+        count_r(instruct, mode);
+    if ((instruct >= 9) || (instruct <= 11))
+        count_rr(instruct, mode);
+    if ((instruct >= 1) || (instruct <= 3))
+        count_s(instruct, mode);
+    if ((instruct == 4) || (instruct == 5))
+        count_p(instruct, mode);
+}
+

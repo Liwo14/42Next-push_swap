@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 07:34:00 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 10:47:50 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 15:01:15 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ static ssize_t	disorder_level(t_stack *head, ssize_t	bench)
 void	push_swap(t_stack **stack_a, ssize_t strategy, ssize_t	bench)
 {
 	if (bench > 0)
+	{
+		write_instruct(0, -1);
 		print_strat(strategy);
+	}
 	if (strategy == 4)
 		strategy = disorder_level(*stack_a, 0);
 	if (strategy == 1 && bench > 0)

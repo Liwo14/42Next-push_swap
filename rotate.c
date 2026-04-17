@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 04:41:01 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/17 09:10:06 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 14:38:09 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,18 @@ void	rotate(t_stack **head)
 void	ra(t_stack **a)
 {
 	rotate(a);
-	write(1, "ra\n", 3);
-	count_r('a', 0);
+	write_instruct(6, 0);
 }
 
 void	rb(t_stack **b)
 {
 	rotate(b);
-	write(1, "rb\n", 3);
-	count_r('b', 0);
+	write_instruct(7, 0);
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);
-	write(1, "rr\n", 3);
-	count_r('r', 0);
+	write_instruct(8, 0);
 }
