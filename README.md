@@ -39,7 +39,27 @@ And use Valgrind to check for leaks:
 
 Testers are available online, though most do not allow for testing with custom flags.
 
-Additionally, you can find a commented-out version of the `debug()` function in the `utils.c` file, which provides detailed error messages.
+Additionally, you can find below a second version of the `debug()` function located in the `utils.c` file, which provides detailed error messages.
+    ssize_t	debugg(ssize_t nb)
+    {
+    	if (nb == 0)
+    		ft_printf("error : arg in list is not a number.\n");
+	    else if (nb == 1)
+	    	ft_printf("error : instruct is invalid.\n");
+	    else if (nb == 2)
+	    	ft_printf("error : instruct count invalid.\n");
+	    else if (nb == 4)
+	    	ft_printf("error : empty input.\n");
+	    else if (nb == 5)
+	    	ft_printf("error : no space before '-'.\n");
+	    else if (nb == 6)
+	    	ft_printf("error : same number found twice in the list\n");
+	    else if (nb == 7)
+	    	ft_printf("error : number out of range\n");
+	    else if (nb == 8)
+	    	ft_printf("error : not sorted\n");
+	    return (-1);
+    }
 
 ## RESOURCES
 
@@ -88,16 +108,17 @@ The structure we use for manipulating the nodes contains 4 components:
 ###  SORTS TYPES
 
 #### Simple Sort (Small Sets)
-    The Simple Sort is used for stacks with 5 or fewer elements. It identifies the smallest index and pushes it to Stack B until only 3 elements remain in Stack A.
-    A specific `sort_three` logic is then applied to Stack A using a maximum of 2-3 instructions, after which the elements from Stack B are pushed back to complete the sort.
+The Simple Sort is used for stacks with 5 or fewer elements. It identifies the smallest index and pushes it to Stack B until only 3 elements remain in Stack A.
+A specific `sort_three` logic is then applied to Stack A using a maximum of 2-3 instructions, after which the elements from Stack B are pushed back to complete the sort.
 
 #### Medium Sort (K-Sort / Chunk Sort)
-    The Medium Sort uses a "chunk" strategy based on the square root of the stack size. It moves elements to Stack B in a pre-sorted range, effectively creating a "butterfly" or hourglass shape.
-    Once Stack A is empty, it repeatedly finds the maximum element in Stack B and pushes it back to Stack A in the correct order.
+The Medium Sort uses a "chunk" strategy based on the square root of the stack size.
+It moves elements to Stack B in a pre-sorted range, effectively creating a "butterfly" or hourglass shape.
+Once Stack A is empty, it repeatedly finds the maximum element in Stack B and pushes it back to Stack A in the correct order.
 
 #### Complex Sort (Radix Sort)
-    The Complex Sort implements a binary Radix Sort for large datasets.
-    It iterates through the bits of the pre-calculated indices (from the least significant to the most significant bit).
+The Complex Sort implements a binary Radix Sort for large datasets.
+It iterates through the bits of the pre-calculated indices (from the least significantto the most significant bit).
 
 * If the current bit of an index is 0, the node is pushed to Stack B.
 * If the current bit is 1, the node is rotated to the bottom of Stack A.
