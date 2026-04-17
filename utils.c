@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 08:10:17 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 15:56:01 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,3 @@ ssize_t	ft_atoi(const char *str)
 	nb = (nb * sign);
 	return (nb);
 }
-

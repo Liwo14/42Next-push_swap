@@ -6,13 +6,13 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 07:28:46 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 15:52:53 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static ssize_t	find_nb_flag(char **argv, ssize_t	bench)
+static ssize_t	find_nb_flag(char **argv, ssize_t bench)
 {
 	ssize_t	checker;
 	ssize_t	i;
@@ -32,7 +32,6 @@ static ssize_t	find_nb_flag(char **argv, ssize_t	bench)
 			else
 				i++;
 		}
-		
 		return (checker);
 	}
 }
@@ -92,7 +91,7 @@ ssize_t	char_check(char *argv)
 	return (0);
 }
 
-ssize_t	check_flags(int argc, char **argv, ssize_t	bench)
+ssize_t	check_flags(int argc, char **argv, ssize_t bench)
 {
 	ssize_t	flag_index;
 	ssize_t	strategy;

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 04:38:01 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/17 14:41:06 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 15:55:48 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,3 @@ void	ss(t_stack **a, t_stack **b)
 	swap(b);
 	write_instruct(3, 0);
 }
-

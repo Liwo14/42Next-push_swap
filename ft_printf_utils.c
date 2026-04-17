@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 08:28:44 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 14:58:14 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 15:52:38 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,3 @@ int	ft_printf_parse(char arg_type, va_list args)
 		count += ft_putunbr(va_arg(args, unsigned int));
 	return (count);
 }
-

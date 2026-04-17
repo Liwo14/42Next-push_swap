@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 15:00:21 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 15:51:59 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-static	ssize_t is_bench(char	**argv)
+static ssize_t	is_bench(char **argv)
 {
 	ssize_t	i;
 	ssize_t	j;
@@ -81,6 +81,8 @@ int	main(int argc, char **argv)
 	}
 	init(raw_str, &stack_a, &stack_b);
 	push_swap(&stack_a, strategy, bench);
+	if (bench > 1)
+		put_bench();
 	free_stack(&stack_a);
 	return (0);
 }

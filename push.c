@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 04:40:19 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/17 14:40:02 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 15:53:41 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ void	pa(t_stack **a, t_stack **b)
 void	pb(t_stack **a, t_stack **b)
 {
 	push(b, a);
-	write_instruct(5, 0);;
+	write_instruct(5, 0);
 }
