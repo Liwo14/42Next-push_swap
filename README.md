@@ -40,26 +40,35 @@ And use Valgrind to check for leaks:
 Testers are available online, though most do not allow for testing with custom flags.
 
 Additionally, you can find below a second version of the `debug()` function located in the `utils.c` file, which provides detailed error messages.
-##### DEBUGG FUNCTION
+##### DEBUGG FUNCTION V2
     ssize_t	debugg(ssize_t nb)
     {
     	if (nb == 0)
-    		ft_printf("error : arg in list is not a number.\n");
+    		ft_printf("Error : arg in list is not a number.\n");
 	    else if (nb == 1)
-	    	ft_printf("error : instruct is invalid.\n");
+	    	ft_printf("Error : instruct is invalid.\n");
 	    else if (nb == 2)
-	    	ft_printf("error : instruct count invalid.\n");
+	    	ft_printf("Error : instruct count invalid.\n");
 	    else if (nb == 4)
-	    	ft_printf("error : empty input.\n");
+	    	ft_printf("Error : empty input.\n");
 	    else if (nb == 5)
-	    	ft_printf("error : no space before '-'.\n");
+	    	ft_printf("Error : no space before '-'.\n");
 	    else if (nb == 6)
-	    	ft_printf("error : same number found twice in the list\n");
+	    	ft_printf("Error : same number found twice in the list\n");
 	    else if (nb == 7)
-	    	ft_printf("error : number out of range\n");
+	    	ft_printf("Error : number out of range\n");
 	    else if (nb == 8)
-	    	ft_printf("error : not sorted\n");
+	    	ft_printf("Error : not sorted\n");
 	    return (-1);
+    }
+##### DEBUGG FUNCTION V1
+    ssize_t	debugg(ssize_t nb)
+    {
+    	if (nb == 4)
+    		return (-1);
+    	else if (nb >= 0)
+    		ft_printf("Error\n");
+    	return (-1);
     }
 
 ## RESOURCES

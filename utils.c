@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 07:12:51 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 08:10:17 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,21 @@ ssize_t	ft_strcmp(const char *s1, const char *s2)
 ssize_t	debugg(ssize_t nb)
 {
 	if (nb == 0)
-		ft_printf("error : arg in list is not a number.\n");
+		ft_printf("Error : arg in list is not a number.\n");
 	else if (nb == 1)
-		ft_printf("error : instruct is invalid.\n");
+		ft_printf("Error : instruct is invalid.\n");
 	else if (nb == 2)
-		ft_printf("error : instruct count invalid.\n");
+		ft_printf("Error : instruct count invalid.\n");
 	else if (nb == 4)
-		ft_printf("error : empty input.\n");
+		ft_printf("Error : empty input.\n");
 	else if (nb == 5)
-		ft_printf("error : no space before '-'.\n");
+		ft_printf("Error : no space before '-'.\n");
 	else if (nb == 6)
-		ft_printf("error : same number found twice in the list\n");
+		ft_printf("Error : same number found twice in the list\n");
 	else if (nb == 7)
-		ft_printf("error : number out of range\n");
+		ft_printf("Error : number out of range\n");
 	else if (nb == 8)
-		ft_printf("error : not sorted\n");
+		ft_printf("Error : not sorted\n");
 	return (-1);
 }
 
@@ -89,35 +89,3 @@ ssize_t	ft_atoi(const char *str)
 	return (nb);
 }
 
-/*
-ssize_t	debugg(ssize_t nb)
-{
-	if (nb == 0)
-		ft_printf("error : arg in list is not a number.\n");
-	else if (nb == 1)
-		ft_printf("error : instruct is invalid.\n");
-	else if (nb == 2)
-		ft_printf("error : instruct count invalid.\n");
-	else if (nb == 4)
-		ft_printf("error : empty input.\n");
-	else if (nb == 5)
-		ft_printf("error : no space before '-'.\n");
-	else if (nb == 6)
-		ft_printf("error : same number found twice in the list\n");
-	else if (nb == 7)
-		ft_printf("error : number out of range\n");
-	else if (nb == 8)
-		ft_printf("error : not sorted\n");
-	return (-1);
-}
-
-ssize_t	debugg(ssize_t nb)
-{
-	if (nb == 4)
-		return (-1);
-	else if (nb >= 0)
-		ft_printf("Error\n");
-	return (-1);
-}
-
-*/
