@@ -85,17 +85,19 @@ The structure we use for manipulating the nodes contains 4 components:
 * **The index**: Another specificity is that our program defines every node's final position beforehand. This is especially useful in the complex algorithm (Radix sort), where negative values are harder to handle.
 * **The value**: Finally, the actual value or content of the node.
 
-1. Simple Sort (Small Sets)
-The Simple Sort is used for stacks with 5 or fewer elements. It identifies the smallest index and pushes it to Stack B until only 3 elements remain in Stack A.
-A specific `sort_three` logic is then applied to Stack A using a maximum of 2-3 instructions, after which the elements from Stack B are pushed back to complete the sort.
+###  SORTS TYPES
 
-2. Medium Sort (K-Sort / Chunk Sort)
-The Medium Sort uses a "chunk" strategy based on the square root of the stack size. It moves elements to Stack B in a pre-sorted range, effectively creating a "butterfly" or hourglass shape.
-Once Stack A is empty, it repeatedly finds the maximum element in Stack B and pushes it back to Stack A in the correct order.
+#### Simple Sort (Small Sets)
+    The Simple Sort is used for stacks with 5 or fewer elements. It identifies the smallest index and pushes it to Stack B until only 3 elements remain in Stack A.
+    A specific `sort_three` logic is then applied to Stack A using a maximum of 2-3 instructions, after which the elements from Stack B are pushed back to complete the sort.
 
-3. Complex Sort (Radix Sort)
-The Complex Sort implements a binary Radix Sort for large datasets.
-It iterates through the bits of the pre-calculated indices (from the least significant to the most significant bit).
+#### Medium Sort (K-Sort / Chunk Sort)
+    The Medium Sort uses a "chunk" strategy based on the square root of the stack size. It moves elements to Stack B in a pre-sorted range, effectively creating a "butterfly" or hourglass shape.
+    Once Stack A is empty, it repeatedly finds the maximum element in Stack B and pushes it back to Stack A in the correct order.
+
+#### Complex Sort (Radix Sort)
+    The Complex Sort implements a binary Radix Sort for large datasets.
+    It iterates through the bits of the pre-calculated indices (from the least significant to the most significant bit).
 
 * If the current bit of an index is 0, the node is pushed to Stack B.
 * If the current bit is 1, the node is rotated to the bottom of Stack A.
