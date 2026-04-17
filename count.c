@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 09:13:02 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/17 17:04:45 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 17:13:03 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ ssize_t	parse_count(ssize_t instruct, ssize_t mode)
 		return (count_rr(instruct, mode));
 	else if ((instruct == 1) || (instruct == 2) || (instruct == 3))
 		return (count_s(instruct, mode));
-	else if ((instruct == 4) && (instruct == 5))
+	else if ((instruct == 4) || (instruct == 5))
 		return (count_p(instruct, mode));
 	return (0);
 }

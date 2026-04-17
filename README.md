@@ -2,7 +2,7 @@
 
 ## DESCRIPTION
 Push_swap is the first group project of the 42 curriculum.
-The objective is to create a program which  takes as input a series of numbers within the int range, and an optional flag (see more below).
+The objective is to create a program which takes as input a series of numbers within the integer range, and an optional flag (see more below).
 
 The program then sorts the numbers by swapping them between two stacks, A and B. There is a restricted list of movements allowed within and between the stacks (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr); see details in the Resources section.
 
@@ -21,15 +21,17 @@ To compile this project, you must run the command `make`.
 Our program allows for some flexibility: it tolerates and corrects multiple spaces, and/or stray "-" characters between spaces.
 
 ### FLAGS
-Using one of 4 flags below will change the sorting behavior (Only one at a time): 
+Using one of 4 flags below will change the sorting behavior (only one at a time): 
 `--simple` / `--medium` / `--complex` / `--adaptive`
-Additionally, you can activate the benchmark mode with :
+Additionally, you can activate the benchmark mode with:
 `--bench`
+More about `Benchmark Mode` in Resources.
+
 Flags can be placed mostly anywhere in the input.
-See exeption below:
+See exceptions below:
 ./push_swap 3 2 1 "--flag 6 5 4"     ->  Error.
 ./push_swap 3 2 1 "--simple" 6 5 4   ->  Ok, forces the simple sorting strategy.
-./push_swap 3 2 1 --bench "6 5 4"   ->  Ok, activate benchmark mode.
+./push_swap 3 2 1 --bench "6 5 4"   ->  Ok, activates benchmark mode.
 
 You can check the Norm with this command in the terminal:
 `norminette`
@@ -39,8 +41,8 @@ And use Valgrind to check for leaks:
 
 Testers are available online, though most do not allow for testing with custom flags.
 
-Additionally, you can find below both version of the `debug()` function, located in the `utils.c` file.
-The second version will provide more usefull error messages.
+Additionally, you can find below both version of the `debugg`
+The second version will provide more useful error messages.
 
 ##### DEBUGG FUNCTION V1
     ssize_t	debugg(ssize_t nb)
@@ -56,21 +58,21 @@ The second version will provide more usefull error messages.
     ssize_t	debugg(ssize_t nb)
     {
     	if (nb == 0)
-    		ft_printf("Error : arg in list is not a number.\n");
+    		ft_printf("Error: arg in list is not a number.\n");
 	    else if (nb == 1)
-	    	ft_printf("Error : instruct is invalid.\n");
+	    	ft_printf("Error: instruct is invalid.\n");
 	    else if (nb == 2)
-	    	ft_printf("Error : instruct count invalid.\n");
+	    	ft_printf("Error: instruct count invalid.\n");
 	    else if (nb == 4)
-	    	ft_printf("Error : empty input.\n");
+	    	ft_printf("Error: empty input.\n");
 	    else if (nb == 5)
-	    	ft_printf("Error : no space before '-'.\n");
+	    	ft_printf("Error: no space before '-'.\n");
 	    else if (nb == 6)
-	    	ft_printf("Error : same number found twice in the list\n");
+	    	ft_printf("Error: same number found twice in the list\n");
 	    else if (nb == 7)
-	    	ft_printf("Error : number out of range\n");
+	    	ft_printf("Error: number out of range\n");
 	    else if (nb == 8)
-	    	ft_printf("Error : not sorted\n");
+	    	ft_printf("Error: not sorted\n");
 	    return (-1);
     }
 
@@ -78,7 +80,15 @@ The second version will provide more usefull error messages.
 
 This push_swap follows the new subject of the 42_next cursus, version 1.1.
 
-Here is the detailed list of movements allowed:
+### BENCHMARK MODE
+
+This mode will provide information about : 
+* The computed Complexity
+* The selected algorithm and strategy
+* The total number of operations
+* The count of each operation
+
+### MOVEMENT LIST
 
 #### sa (swap a):
     Swap the first two elements at the top of stack a.
@@ -131,7 +141,7 @@ Once Stack A is empty, it repeatedly finds the maximum element in Stack B and pu
 
 #### Complex Sort (Radix Sort)
 The Complex Sort implements a binary Radix Sort for large datasets.
-It iterates through the bits of the pre-calculated indices (from the least significantto the most significant bit).
+It iterates through the bits of the pre-calculated indices (from the least significant to the most significant bit).
 
 * If the current bit of an index is 0, the node is pushed to Stack B.
 * If the current bit is 1, the node is rotated to the bottom of Stack A.

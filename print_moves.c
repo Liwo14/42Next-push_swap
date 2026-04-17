@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 15:22:21 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/17 17:09:33 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 17:15:12 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	put_bench(void)
 
 	total = 0;
 	i = 1;
-	while (i != 11)
+	while (i <= 11)
 	{
 		arr[i - 1] = parse_count(i, 1);
 		total += arr[i - 1];
