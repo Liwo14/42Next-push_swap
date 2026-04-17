@@ -6,30 +6,49 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 07:34:00 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 15:13:29 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 10:47:50 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_strategy(size_t mistakes, size_t pairs)
+static	void	print_strat(strategy)
+{
+	if (strategy == 4)
+		ft_printf("[bench] strategy: Adaptive");
+	else if (strategy == 1)
+		ft_printf("[bench] strategy: Simple");
+	else if (strategy == 2)
+		ft_printf("[bench] strategy: Medium");	
+	else if (strategy == 3)
+		ft_printf("[bench] strategy: Complex");
+}
+
+static ssize_t	get_strategy(ssize_t mistakes, ssize_t pairs, ssize_t	bench)
 {
 	float	disorder;
+	float	disorder_decimal;
 
-	if (pairs <= 10)
+	disorder_decimal = (float)mistakes / (float)pairs;
+	disorder = disorder_decimal * 100;
+	disorder_decimal = disorder - (ssize_t)disorder;
+	disorder_decimal = disorder_decimal * 100;
+	if (bench > 0)
+		{
+			ft_printf("[bench] disorder: %d,%d", (ssize_t)disorder, (ssize_t)disorder_decimal);
+			write(2, "%\n", 2);
+		}
+	if ((ssize_t)disorder < 20)
 		return (1);
-	disorder = (float)mistakes / (float)pairs;
-	if (disorder < 0.2f)
-		return (1);
-	if (disorder >= 0.5f)
+	if ((ssize_t)disorder >= 50)
 		return (3);
 	return (2);
 }
 
-static int	disorder_level(t_stack *head)
+static ssize_t	disorder_level(t_stack *head, ssize_t	bench)
 {
-	size_t	mistakes;
-	size_t	pairs;
+	ssize_t	mistakes;
+	ssize_t	pairs;
 	t_stack	*current;
 	t_stack	*compare;
 
@@ -50,13 +69,22 @@ static int	disorder_level(t_stack *head)
 		}
 		current = current->next;
 	}
-	return (get_strategy(mistakes, pairs));
+	return (get_strategy(mistakes, pairs, bench));
 }
 
-void	push_swap(t_stack **stack_a, ssize_t strategy)
+void	push_swap(t_stack **stack_a, ssize_t strategy, ssize_t	bench)
 {
+	if (bench > 0)
+		print_strat(strategy);
 	if (strategy == 4)
-		strategy = disorder_level(*stack_a);
+		strategy = disorder_level(*stack_a, 0);
+	if (strategy == 1 && bench > 0)
+		ft_printf(" / O(n²)\n");
+	if (strategy == 2 && bench > 0)
+		ft_printf(" / O(n√n)\n");	
+	if (strategy == 3 && bench > 0)
+		ft_printf(" / O(n log n)\n");
+	disorder_level(*stack_a, bench);
 	if (is_sorted(*stack_a) != 1)
 	{
 		if (strategy == 1)
@@ -67,8 +95,5 @@ void	push_swap(t_stack **stack_a, ssize_t strategy)
 			*stack_a = complex_sort(*stack_a);
 	}
 	if (is_sorted(*stack_a) != 1)
-	{
 		debugg(8);
-		return ;
-	}
 }

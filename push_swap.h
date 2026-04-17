@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 07:05:11 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 09:39:49 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ typedef struct s_stack
 }					t_stack;
 
 void				init(char *str, t_stack **stack_a, t_stack **stack_b);
-void				push_swap(t_stack **stack_a, ssize_t strategy);
+void				push_swap(t_stack **stack_a, ssize_t strategy,
+						ssize_t bench);
 void				fill_index(t_stack *stack, size_t list_size);
 void				add_bottom(t_stack **stack, t_stack *new);
 void				push(t_stack **dest, t_stack **src);
@@ -48,13 +49,17 @@ void				sa(t_stack **a);
 void				sb(t_stack **b);
 void				rb(t_stack **b);
 
-ssize_t				check_flags(int argc, char **argv, ssize_t	bench);
+ssize_t				check_flags(int argc, char **argv, ssize_t bench);
 ssize_t				direction(t_stack *tmp, ssize_t val, ssize_t max);
 ssize_t				ft_strcmp(const char *s1, const char *s2);
+ssize_t				count_rr(char flag, ssize_t instruct);
+ssize_t				count_p(char flag, ssize_t instruct);
+ssize_t				count_r(char flag, ssize_t instruct);
+ssize_t				count_s(char flag, ssize_t instruct);
 ssize_t				get_stack_size(t_stack *head);
 ssize_t				is_sorted(t_stack *head);
 ssize_t				ft_atoi(const char *str);
-ssize_t				find_flag(char **argv, ssize_t	bench);
+ssize_t				find_flag(char **argv, ssize_t bench);
 ssize_t				char_check(char *str);
 ssize_t				debugg(ssize_t nb);
 
@@ -74,8 +79,8 @@ size_t				ft_strlen(char const *str);
 
 char				**split(char *str, char c);
 char				*clean_list(char *raw_str);
-char				*extract_str(int argc, char **argv, ssize_t	bench);
+char				*extract_str(int argc, char **argv, ssize_t bench);
 
 #endif
 
-//ssize_t				ultra_simple_sort(t_stack **stack_a);
+// ssize_t				ultra_simple_sort(t_stack **stack_a);

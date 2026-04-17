@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 04:40:19 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/13 08:22:59 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 11:31:59 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,17 @@ void	push(t_stack **dest, t_stack **src)
 	push_to_dest(dest, tmp);
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b, ssize_t	bench)
 {
 	push(a, b);
-	write(1, "pa\n", 3);
+	if (bench > 0)
+		write(1, "pa\n", 3);
+	count_p('a', 0);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
 	push(b, a);
 	write(1, "pb\n", 3);
+	count_p('b', 0);
 }

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 04:38:01 by arde-ass          #+#    #+#             */
-/*   Updated: 2026/04/16 09:56:02 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 09:09:47 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ void	sa(t_stack **a)
 {
 	swap(a);
 	write(1, "sa\n", 3);
+	count_s('a', 0);
 }
 
 void	sb(t_stack **b)
 {
 	swap(b);
 	write(1, "sb\n", 3);
+	count_s('b', 0);
 }
 
 void	ss(t_stack **a, t_stack **b)
@@ -44,4 +46,5 @@ void	ss(t_stack **a, t_stack **b)
 	swap(a);
 	swap(b);
 	write(1, "ss\n", 3);
+	count_s('s', 0);
 }

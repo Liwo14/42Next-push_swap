@@ -39,7 +39,19 @@ And use Valgrind to check for leaks:
 
 Testers are available online, though most do not allow for testing with custom flags.
 
-Additionally, you can find below a second version of the `debug()` function located in the `utils.c` file, which provides detailed error messages.
+Additionally, you can find below both version of the `debug()` function, located in the `utils.c` file.
+The second version will provide more usefull error messages.
+
+##### DEBUGG FUNCTION V1
+    ssize_t	debugg(ssize_t nb)
+    {
+    	if (nb == 4)
+    		return (-1);
+    	else if (nb >= 0)
+    		ft_printf("Error\n");
+    	return (-1);
+    }
+
 ##### DEBUGG FUNCTION V2
     ssize_t	debugg(ssize_t nb)
     {
@@ -60,15 +72,6 @@ Additionally, you can find below a second version of the `debug()` function loca
 	    else if (nb == 8)
 	    	ft_printf("Error : not sorted\n");
 	    return (-1);
-    }
-##### DEBUGG FUNCTION V1
-    ssize_t	debugg(ssize_t nb)
-    {
-    	if (nb == 4)
-    		return (-1);
-    	else if (nb >= 0)
-    		ft_printf("Error\n");
-    	return (-1);
     }
 
 ## RESOURCES
