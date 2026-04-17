@@ -40,6 +40,7 @@ And use Valgrind to check for leaks:
 Testers are available online, though most do not allow for testing with custom flags.
 
 Additionally, you can find below a second version of the `debug()` function located in the `utils.c` file, which provides detailed error messages.
+##### DEBUGG FUNCTION
     ssize_t	debugg(ssize_t nb)
     {
     	if (nb == 0)
