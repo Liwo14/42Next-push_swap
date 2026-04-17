@@ -17,16 +17,16 @@ ccolnat wrote all the input-related code up to the initialization of the linked 
 ## INSTRUCTIONS
 To compile this project, you must run the command `make`.
 
-Regarding inputs, our program allows for some flexibility: it tolerates and corrects multiple spaces, and/or stray "-" characters between spaces.
+# INPUTS
+our program allows for some flexibility: it tolerates and corrects multiple spaces, and/or stray "-" characters between spaces.
 
-Regarding flags, you can use 4 different types which will change the sorting behavior: 
+# FLAGS
+Using one of 4 flags below will change the sorting behavior (Only one at a time): 
 `--simple` / `--medium` / `--complex` / `--adaptive`
-And a fifth one, which activate the benchmark mode :
+Additionally, you can activate the benchmark mode with :
 `--bench`
-
-You can use up to two flags per call, and the second one must be --bench. These flags can be placed anywhere in the input, except inside quotation marks in specific cases.
-
-See examples below:
+Flags can be placed mostly anywhere in the input.
+See exeption below:
 ./push_swap 3 2 1 "--flag 6 5 4"     ->  Error.
 ./push_swap 3 2 1 "--simple" 6 5 4   ->  Ok, forces the simple sorting strategy.
 ./push_swap 3 2 1 --bench "6 5 4"   ->  Ok, activate benchmark mode.
