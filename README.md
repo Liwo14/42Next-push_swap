@@ -17,10 +17,10 @@ ccolnat wrote all the input-related code up to the initialization of the linked 
 ## INSTRUCTIONS
 To compile this project, you must run the command `make`.
 
-######  INPUTS
+####  INPUTS
 Our program allows for some flexibility: it tolerates and corrects multiple spaces, and/or stray "-" characters between spaces.
 
-######  FLAGS
+##### FLAGS
 Using one of 4 flags below will change the sorting behavior (Only one at a time): 
 `--simple` / `--medium` / `--complex` / `--adaptive`
 Additionally, you can activate the benchmark mode with :
@@ -47,25 +47,25 @@ This push_swap follows the new subject of the 42_next cursus, version 1.1.
 
 Here is the detailed list of movements allowed:
 
-###### sa (swap a):
+##### sa (swap a):
 Swap the first two elements at the top of stack a. Do nothing if there is only one or no elements.
-###### sb (swap b): 
+##### sb (swap b): 
 Swap the first two elements at the top of stack b. Do nothing if there is only one or no elements.
-###### ss:** sa and sb at the same time.
-###### pa (push a): 
+##### ss:** sa and sb at the same time.
+##### pa (push a): 
 Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.
-###### pb (push b): 
+##### pb (push b): 
 Take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
-###### ra (rotate a): 
+##### ra (rotate a): 
 Shift up all elements of stack a by one. The first element becomes the last one.
-###### rb (rotate b): 
+##### rb (rotate b): 
 Shift up all elements of stack b by one. The first element becomes the last one.
-###### rr:** ra and rb at the same time.
-###### rra (reverse rotate a): 
+##### rr:** ra and rb at the same time.
+##### rra (reverse rotate a): 
 Shift down all elements of stack a by one. The last element becomes the first one.
-###### rrb (reverse rotate b): 
+##### rrb (reverse rotate b): 
 Shift down all elements of stack b by one. The last element becomes the first one.
-###### rrr:** rra and rrb at the same time.
+##### rrr:** rra and rrb at the same time.
 
 The structure we use for manipulating the nodes contains 4 components:
 
