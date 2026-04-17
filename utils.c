@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 13:17:20 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 06:56:43 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,6 @@ ssize_t	ft_atoi(const char *str)
 	return (nb);
 }
 
-int	ft_putchar(char c)
-{
-	write(2, &c, 1);
-	return (1);
-}
 /*
 ssize_t	debugg(ssize_t nb)
 {
@@ -90,7 +85,7 @@ ssize_t	debugg(ssize_t nb)
 	else if (nb == 1)
 		ft_printf("error : instruct is invalid.\n");
 	else if (nb == 2)
-		ft_printf("error : not exactly one instruct.\n");
+		ft_printf("error : instruct count invalid.\n");
 	else if (nb == 4)
 		ft_printf("error : empty input.\n");
 	else if (nb == 5)

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 10:00:50 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 07:05:11 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ void				sa(t_stack **a);
 void				sb(t_stack **b);
 void				rb(t_stack **b);
 
+ssize_t				check_flags(int argc, char **argv, ssize_t	bench);
 ssize_t				direction(t_stack *tmp, ssize_t val, ssize_t max);
 ssize_t				ft_strcmp(const char *s1, const char *s2);
-ssize_t				check_flags(int argc, char **argv);
 ssize_t				get_stack_size(t_stack *head);
 ssize_t				is_sorted(t_stack *head);
 ssize_t				ft_atoi(const char *str);
-ssize_t				find_flag(char **argv);
+ssize_t				find_flag(char **argv, ssize_t	bench);
 ssize_t				char_check(char *str);
 ssize_t				debugg(ssize_t nb);
 
@@ -74,7 +74,7 @@ size_t				ft_strlen(char const *str);
 
 char				**split(char *str, char c);
 char				*clean_list(char *raw_str);
-char				*extract_str(int argc, char **argv);
+char				*extract_str(int argc, char **argv, ssize_t	bench);
 
 #endif
 

@@ -19,15 +19,17 @@ To compile this project, you must run the command `make`.
 
 Regarding inputs, our program allows for some flexibility: it tolerates and corrects multiple spaces, and/or stray "-" characters between spaces.
 
-Regarding flags, you can use 4 different types: 
+Regarding flags, you can use 4 different types which will change the sorting behavior: 
 `--simple` / `--medium` / `--complex` / `--adaptive`
+And a fifth one, which activate the benchmark mode :
+`--bench`
 
-Flags are limited to only one per call. These flags can be placed anywhere in the input, except inside quotation marks in specific cases.
+You can use up to two flags per call, and the second one must be --bench. These flags can be placed anywhere in the input, except inside quotation marks in specific cases.
 
 See examples below:
-./push_swap 3 2 1 "--flag 6 5 4"     ->  Error
-./push_swap 3 2 1 "--simple" 6 5 4   ->  Ok, forces the simple sorting strategy
-./push_swap 3 2 1 --medium "6 5 4"   ->  Ok, forces the medium sorting strategy
+./push_swap 3 2 1 "--flag 6 5 4"     ->  Error.
+./push_swap 3 2 1 "--simple" 6 5 4   ->  Ok, forces the simple sorting strategy.
+./push_swap 3 2 1 --bench "6 5 4"   ->  Ok, activate benchmark mode.
 
 You can check the Norm with this command in the terminal:
 `norminette`
@@ -65,13 +67,16 @@ The structure we use for manipulating the nodes contains 4 components:
 * **The value**: Finally, the actual value or content of the node.
 
 1. Simple Sort (Small Sets)
-The Simple Sort is used for stacks with 5 or fewer elements. It identifies the smallest index and pushes it to Stack B until only 3 elements remain in Stack A. A specific `sort_three` logic is then applied to Stack A using a maximum of 2-3 instructions, after which the elements from Stack B are pushed back to complete the sort.
+The Simple Sort is used for stacks with 5 or fewer elements. It identifies the smallest index and pushes it to Stack B until only 3 elements remain in Stack A.
+A specific `sort_three` logic is then applied to Stack A using a maximum of 2-3 instructions, after which the elements from Stack B are pushed back to complete the sort.
 
 2. Medium Sort (K-Sort / Chunk Sort)
-The Medium Sort uses a "chunk" strategy based on the square root of the stack size. It moves elements to Stack B in a pre-sorted range, effectively creating a "butterfly" or hourglass shape. Once Stack A is empty, it repeatedly finds the maximum element in Stack B and pushes it back to Stack A in the correct order.
+The Medium Sort uses a "chunk" strategy based on the square root of the stack size. It moves elements to Stack B in a pre-sorted range, effectively creating a "butterfly" or hourglass shape.
+Once Stack A is empty, it repeatedly finds the maximum element in Stack B and pushes it back to Stack A in the correct order.
 
 3. Complex Sort (Radix Sort)
-The Complex Sort implements a binary Radix Sort for large datasets. It iterates through the bits of the pre-calculated indices (from the least significant to the most significant bit).
+The Complex Sort implements a binary Radix Sort for large datasets.
+It iterates through the bits of the pre-calculated indices (from the least significant to the most significant bit).
 
 * If the current bit of an index is 0, the node is pushed to Stack B.
 * If the current bit is 1, the node is rotated to the bottom of Stack A.

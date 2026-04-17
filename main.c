@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 11:42:23 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 09:45:20 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 07:11:13 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,58 @@ static void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
+static	ssize_t is_bench(char	**argv)
+{
+	ssize_t	i;
+	ssize_t	j;
+	ssize_t	checker;
+
+	i = 1;
+	{
+		while (argv[i] != NULL)
+		{
+			if ((argv[i][0] == '-') && (argv[i][1] == '-'))
+			{
+				if (ft_strcmp(argv[i], "--bench") == 1)
+				{
+					j = i;
+					checker++;
+				}
+			}
+			i++;
+		}
+		if (checker > 1)
+			return (debugg(2));
+		else if (checker == 1)
+			return (j);
+		return (0);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	ssize_t	strategy;
+	ssize_t	bench;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	*raw_str;
 
-	strategy = check_flags(argc, argv);
+	bench = is_bench(argv);
+	if (bench == -1)
+		return (1);
+	strategy = check_flags(argc, argv, bench);
 	if (strategy == -1)
 		return (1);
-	raw_str = extract_str(argc, argv);
+	raw_str = extract_str(argc, argv, bench);
 	if (char_check(raw_str) == -1)
 	{
 		free(raw_str);
 		return (1);
 	}
+	if (bench == 0)
+		ft_printf("Bench off");
+	if (bench > 0)
+		ft_printf("Bench on");
 	init(raw_str, &stack_a, &stack_b);
 	push_swap(&stack_a, strategy);
 	free_stack(&stack_a);

@@ -6,13 +6,13 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 09:46:41 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 07:09:31 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static ssize_t	find_nb_flag(char **argv)
+static ssize_t	find_nb_flag(char **argv, ssize_t	bench)
 {
 	ssize_t	checker;
 	ssize_t	i;
@@ -22,15 +22,19 @@ static ssize_t	find_nb_flag(char **argv)
 	{
 		while (argv[i] != NULL)
 		{
-			if ((argv[i][0] == '-') && (argv[i][1] == '-'))
+			if (i == bench)
+				i++;
+			else if ((argv[i][0] == '-') && (argv[i][1] == '-'))
+			{
 				checker++;
-			i++;
+				i++;
+			}
 		}
 		return (checker);
 	}
 }
 
-ssize_t	find_flag(char **argv)
+ssize_t	find_flag(char **argv, ssize_t bench)
 {
 	ssize_t	i;
 
@@ -38,9 +42,13 @@ ssize_t	find_flag(char **argv)
 	{
 		while (argv[i] != NULL)
 		{
-			if ((argv[i][0] == '-') && (argv[i][1] == '-'))
+			if (i == bench)
+				i++;
+			else if ((argv[i][0] == '-') && (argv[i][1] == '-'))
+			{
 				return (i);
-			i++;
+				i++;
+			}
 		}
 		return (0);
 	}
@@ -79,7 +87,7 @@ ssize_t	char_check(char *argv)
 	return (0);
 }
 
-ssize_t	check_flags(int argc, char **argv)
+ssize_t	check_flags(int argc, char **argv, ssize_t	bench)
 {
 	ssize_t	flag_index;
 	ssize_t	strategy;
@@ -91,11 +99,11 @@ ssize_t	check_flags(int argc, char **argv)
 		return (debugg(4));
 	if (argc > 2)
 	{
-		if (find_nb_flag(argv) == 0)
+		if (find_nb_flag(argv, bench) == 0)
 			return (strategy);
-		if (find_nb_flag(argv) > 1)
+		if (find_nb_flag(argv, bench) > 1)
 			return (debugg(2));
-		flag_index = find_flag(argv);
+		flag_index = find_flag(argv, bench);
 		return (parse_instruct(argv, flag_index));
 	}
 	return (-1);
