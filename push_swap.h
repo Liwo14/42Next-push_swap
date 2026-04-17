@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 15:51:54 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/17 16:56:25 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ ssize_t				direction(t_stack *tmp, ssize_t val, ssize_t max);
 ssize_t				parse_count(ssize_t instruct, ssize_t mode);
 ssize_t				ft_strcmp(const char *s1, const char *s2);
 ssize_t				find_flag(char **argv, ssize_t bench);
-// ssize_t				count_rr(ssize_t instruct, ssize_t mode);
-// ssize_t				count_p(ssize_t instruct, ssize_t mode);
-// ssize_t				count_r(ssize_t instruct, ssize_t mode);
-// ssize_t				count_s(ssize_t instruct, ssize_t mode);
+ssize_t				count_rr(ssize_t instruct, ssize_t mode);
+ssize_t				count_p(ssize_t instruct, ssize_t mode);
+ssize_t				count_r(ssize_t instruct, ssize_t mode);
+ssize_t				count_s(ssize_t instruct, ssize_t mode);
 ssize_t				get_stack_size(t_stack *head);
 ssize_t				is_sorted(t_stack *head);
 ssize_t				ft_atoi(const char *str);
