@@ -1,4 +1,4 @@
-*This project was created as part of the 42 curriculum by ccolnat and arde-ass.*
+*This project was created as part of the 42 curriculum by <ccolnat>, <arde-ass>.*
 
 ## DESCRIPTION
 Push_swap is the first group project of the 42 curriculum.
