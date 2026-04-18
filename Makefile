@@ -6,7 +6,7 @@
 #    By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#              #
-#    Updated: 2026/04/18 13:48:44 by ccolnat          ###   ########.fr        #
+#    Updated: 2026/04/18 14:10:26 by ccolnat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,29 +16,29 @@ CFLAGS  =   -Wall -Wextra -Werror
 
 CC      =   gcc
 
-SRCS    =   main.c \
-            init.c \
-            input_check.c \
-            input_clean.c \
-            linked_list.c \
-            linked_list_utils.c \
-            push_swap.c \
-            push.c \
-            rotate.c \
-            rev_rotate.c \
-            swap.c \
-            simple_sort.c \
-            medium_sort.c \
-            complex_sort.c \
-            sorts_utils.c \
-            split.c \
-            utils.c \
-            ft_printf.c \
-            ft_printf_utils.c \
-            count.c \
-            print_moves.c \
+S       =   src/main.c \
+            src/init.c \
+            src/input_check.c \
+            src/input_clean.c \
+            src/linked_list.c \
+            src/linked_list_utils.c \
+            src/push_swap.c \
+            src/push.c \
+            src/rotate.c \
+            src/rev_rotate.c \
+            src/swap.c \
+            src/simple_sort.c \
+            src/medium_sort.c \
+            src/complex_sort.c \
+            src/sorts_utils.c \
+            src/split.c \
+            src/utils.c \
+            src/ft_printf.c \
+            src/ft_printf_utils.c \
+            src/count.c \
+            src/print_moves.c \
 
-OBJS	=	$(SRCS:.c=.o)
+OBJS	=	$(S:.c=.o)
 
 all:	$(NAME)
 

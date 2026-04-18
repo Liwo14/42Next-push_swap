@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/18 13:50:22 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/18 13:57:51 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static void	ft_strcpy(char *dest, const char *src)
 	dest[j] = '\0';
 }
 
-staticssize_t	total_size(char **argv)
+static	ssize_t	total_size(char **argv)
 {
 	ssize_t	i;
 	ssize_t	j;
