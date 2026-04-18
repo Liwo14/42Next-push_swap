@@ -1,4 +1,4 @@
-*This project was created as part of the 42 curriculum by <ccolnat>, <arde-ass>.*
+*This project was created as part of the 42 curriculum by ccolnat, arde-ass.*
 
 ## DESCRIPTION
 Push_swap is the first group project of the 42 curriculum.
@@ -29,8 +29,8 @@ More about `Benchmark Mode` in Resources.
 
 Flags can be placed mostly anywhere in the input.
 See exceptions below:
-./push_swap 3 2 1 "--flag 6 5 4"     ->  Error.
-./push_swap 3 2 1 "--simple" 6 5 4   ->  Ok, forces the simple sorting strategy.
+./push_swap 3 2 1 "--flag 6 5 4"    ->  Error.
+./push_swap 3 2 1 "--simple" 6 5 4  ->  Ok, forces the simple sorting strategy.
 ./push_swap 3 2 1 --bench "6 5 4"   ->  Ok, activates benchmark mode.
 
 You can check the Norm with this command in the terminal:
