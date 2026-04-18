@@ -6,13 +6,13 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 08:11:24 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/10 09:00:57 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/18 13:50:22 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*new_stack(size_t value)
+t_stack	*new_stack(ssize_t value)
 {
 	t_stack	*new;
 

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:07 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 18:03:31 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/18 13:50:22 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ ssize_t	debugg(ssize_t nb)
 	return (-1);
 }
 
-size_t	ft_strlen(char const *str)
+ssize_t	ft_strlen(char const *str)
 {
-	size_t	i;
+	ssize_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:05:52 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 07:29:12 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/18 13:50:22 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ char	*clean_list(char *raw_str)
 
 static void	ft_strcpy(char *dest, const char *src)
 {
-	size_t	i;
-	size_t	j;
+	ssize_t	i;
+	ssize_t	j;
 
 	j = 0;
 	i = 0;
@@ -84,11 +84,11 @@ static void	ft_strcpy(char *dest, const char *src)
 	dest[j] = '\0';
 }
 
-static size_t	total_size(char **argv)
+staticssize_t	total_size(char **argv)
 {
-	size_t	i;
-	size_t	j;
-	size_t	total_len;
+	ssize_t	i;
+	ssize_t	j;
+	ssize_t	total_len;
 
 	j = 1;
 	total_len = 0;
@@ -108,9 +108,9 @@ static size_t	total_size(char **argv)
 
 char	*extract_str(int argc, char **argv, ssize_t	bench)
 {
-	size_t	flag_index;
-	size_t	i;
-	size_t	total_len;
+	ssize_t	flag_index;
+	ssize_t	i;
+	ssize_t	total_len;
 	char	*raw_str;
 
 	i = 1;

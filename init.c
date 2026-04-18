@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:08:18 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/16 09:39:32 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/18 13:50:22 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static ssize_t	check_dup(char **list)
 {
-	size_t	i;
-	size_t	j;
+	ssize_t	i;
+	ssize_t	j;
 
 	j = 0;
 	while (list[j] != NULL)
@@ -34,7 +34,7 @@ static ssize_t	check_dup(char **list)
 
 static ssize_t	check_list(char **list)
 {
-	size_t	i;
+	ssize_t	i;
 	ssize_t	nb;
 
 	i = 0;
@@ -54,7 +54,7 @@ static ssize_t	check_list(char **list)
 
 static void	init_list(t_stack **stack_a, t_stack **stack_b, char **list)
 {
-	size_t	list_size;
+	ssize_t	list_size;
 
 	list_size = 0;
 	while (list[list_size])

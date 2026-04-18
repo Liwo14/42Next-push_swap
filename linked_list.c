@@ -6,17 +6,17 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 07:25:24 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/13 08:27:52 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/18 13:50:22 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*fill_value(char **list, size_t list_size)
+t_stack	*fill_value(char **list,ssize_t list_size)
 {
 	t_stack	*stack_a;
-	size_t	nb;
-	size_t	i;
+	ssize_t	nb;
+	ssize_t	i;
 
 	stack_a = NULL;
 	i = 0;
@@ -50,11 +50,11 @@ static t_stack	*get_highest_unindexed(t_stack *stack)
 	return (highest);
 }
 
-void	fill_index(t_stack *stack, size_t list_size)
+void	fill_index(t_stack *stack,ssize_t list_size)
 {
 	t_stack	*ptr;
 	t_stack	*highest;
-	size_t	current_idx;
+	ssize_t	current_idx;
 
 	if (!stack)
 		return ;

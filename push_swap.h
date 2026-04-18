@@ -6,7 +6,7 @@
 /*   By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#             */
-/*   Updated: 2026/04/17 16:56:25 by ccolnat          ###   ########.fr       */
+/*   Updated: 2026/04/18 13:50:22 by ccolnat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void				init(char *str, t_stack **stack_a, t_stack **stack_b);
 void				push_swap(t_stack **stack_a, ssize_t strategy,
 						ssize_t bench);
 void				write_instruct(ssize_t instruct, ssize_t mode);
-void				fill_index(t_stack *stack, size_t list_size);
+void				fill_index(t_stack *stack,ssize_t list_size);
 void				add_bottom(t_stack **stack, t_stack *new);
 void				push(t_stack **dest, t_stack **src);
 void				pa(t_stack **a, t_stack **b);
@@ -70,15 +70,15 @@ int					ft_printf_parse(char arg_type, va_list args);
 int					ft_printf(const char *input, ...);
 int					ft_putchar(char c);
 
-t_stack				*fill_value(char **list, size_t list_size);
+t_stack				*fill_value(char **list,ssize_t list_size);
 t_stack				*get_min_node(t_stack *head);
 t_stack				*get_max_node(t_stack *head);
 t_stack				*complex_sort(t_stack *head);
 t_stack				*medium_sort(t_stack *head);
 t_stack				*simple_sort(t_stack *head);
-t_stack				*new_stack(size_t value);
+t_stack				*new_stack(ssize_t value);
 
-size_t				ft_strlen(char const *str);
+ssize_t				ft_strlen(char const *str);
 
 char				*extract_str(int argc, char **argv, ssize_t bench);
 char				**split(char *str, char c);

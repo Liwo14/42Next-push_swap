@@ -6,13 +6,15 @@
 #    By: ccolnat <ccolnat@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/11 09:21:05 by ccolnat           #+#    #+#              #
-#    Updated: 2026/04/17 16:03:30 by ccolnat          ###   ########.fr        #
+#    Updated: 2026/04/18 13:48:44 by ccolnat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    =   push_swap
 
-CC  =   cc
+CFLAGS  =   -Wall -Wextra -Werror
+
+CC      =   gcc
 
 SRCS    =   main.c \
             init.c \
